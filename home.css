@@ -1,0 +1,12 @@
+.student{
+    width: 170px;
+    display: inline-block;
+    margin: 1%;
+    border: 1px solid black;
+}
+h1{
+    text-align: center;
+}
+.container{
+    margin:4%;
+}
