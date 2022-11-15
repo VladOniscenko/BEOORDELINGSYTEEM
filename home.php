@@ -43,8 +43,8 @@ if(mysqli_num_rows($result) > 0){
         echo "<div class='student'>";
         // echo "<td>" . $item['ID'] . "</td>";
         echo "<img class='avatar' src='" . $item['avatar_leerling'] . "' width='75' height = '90'>";
-        echo "<span class='naam'>" . $item['voornaam']." "."</span>";
-        echo "<span class='naam'>". $item['achternaam']."</span>";
+        echo "<div class='naam'>" . $item['voornaam']." "."</div>";
+        echo "<div class='naam'>". $item['achternaam']."</div>";
         // echo "<td>" . $item['Begindatum']. "</td>";
         // echo "<td>" . $item['Einddatum']. "</td>";
         // echo "<td>" . $item['Prioriteit'] . "</td>";
