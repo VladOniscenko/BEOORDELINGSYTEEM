@@ -1,7 +1,7 @@
 <?php
     //db_login
     $db_hostname = 'localhost';
-    $db_username = 'basischool';
+    $db_username = 'basisschool';
     $db_password = 'Theta_123456';
     $db_database = 'basisschool';
 
