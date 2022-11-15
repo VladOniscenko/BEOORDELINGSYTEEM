@@ -29,5 +29,6 @@
     </div>
     
     </form>
+    <a href="registratie.php">Een nieuwe account aanmaken</a>
 </body>
 </html>
