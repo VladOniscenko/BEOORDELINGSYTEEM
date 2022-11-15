@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Klasoverzicht</h1>
-    <a href="">Voeg een nieuw student toe</a>
+    <a class="toevoegen" href="">Voeg een nieuw student toe</a>
 </body>
 </html>
 
@@ -45,6 +45,7 @@ if(mysqli_num_rows($result) > 0){
         echo "<img class='avatar' src='" . $item['avatar_leerling'] . "' width='75' height = '90'>";
         echo "<div class='naam'>" . $item['voornaam']." "."</div>";
         echo "<div class='naam'>". $item['achternaam']."</div>";
+        echo "<a href=''>Aanpassen</a>";
         // echo "<td>" . $item['Begindatum']. "</td>";
         // echo "<td>" . $item['Einddatum']. "</td>";
         // echo "<td>" . $item['Prioriteit'] . "</td>";
