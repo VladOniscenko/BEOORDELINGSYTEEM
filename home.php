@@ -42,9 +42,9 @@ if(mysqli_num_rows($result) > 0){
         //toon de gegevens van het item in een tabelrij
         echo "<div class='student'>";
         // echo "<td>" . $item['ID'] . "</td>";
-        echo "<img class='avatar' src='" . $item['avatar_leerling'] . "' width='150' height = '175'>";
+        echo "<img class='avatar' src='" . $item['avatar_leerling'] . "' width='100' height = '125'>";
         echo "<span class='naam'>" . $item['voornaam']."</span>";
-        echo "<span class='naam'>'". $item['achternaam']."</span>";
+        echo "<span class='naam'>". $item['achternaam']."</span>";
         // echo "<td>" . $item['Begindatum']. "</td>";
         // echo "<td>" . $item['Einddatum']. "</td>";
         // echo "<td>" . $item['Prioriteit'] . "</td>";
