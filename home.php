@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mijn Agenda</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <h1>Klasoverzicht</h1>
-    <a href="">Voeg een nieuw student toe</a>
+    <a class="toevoegen" href="">Voeg een nieuw student toe</a>
 </body>
 </html>
 
@@ -42,9 +42,10 @@ if(mysqli_num_rows($result) > 0){
         //toon de gegevens van het item in een tabelrij
         echo "<div class='student'>";
         // echo "<td>" . $item['ID'] . "</td>";
-        echo "<img class='avatar' src='" . $item['avatar_leerling'] . "' width='150' height = '175'>";
-        echo "<span class='naam'>" . $item['voornaam']."</span>";
-        echo "<span class='naam'>'". $item['achternaam']."</span>";
+        echo "<img class='avatar' src='" . $item['avatar_leerling'] . "' width='75' height = '90'>";
+        echo "<div class='naam'>" . $item['voornaam']." "."</div>";
+        echo "<div class='naam'>". $item['achternaam']."</div>";
+        echo "<a href=''>Aanpassen</a>";
         // echo "<td>" . $item['Begindatum']. "</td>";
         // echo "<td>" . $item['Einddatum']. "</td>";
         // echo "<td>" . $item['Prioriteit'] . "</td>";
