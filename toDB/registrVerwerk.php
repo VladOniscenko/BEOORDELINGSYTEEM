@@ -60,7 +60,8 @@
             else{
 
                 $userN = $_POST['gebruikersnaam'];
-                $passW = $_POST['wachtwoord'];
+                $getPass = $_POST['wachtwoord'];
+                $passW = SHA1($getPass);
                 $voorN = $_POST['voornaam'];
                 $achterN = $_POST['achternaam'];
                 $geboorteD = $_POST['geboorte'];
