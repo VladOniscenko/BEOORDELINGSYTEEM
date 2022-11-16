@@ -6,3 +6,19 @@
     --clr-dark-accent: #956E38;
     --clr-dark-shade: #2C2D35;
 }
+
+.student{
+    width: 170px;
+    display: inline-block;
+    margin: 1%;
+    border: 1px solid black;
+}
+h1{
+    text-align: center;
+}
+.container{
+    margin:4%;
+}
+.toevoegen{
+    margin-left: 4%;
+}
