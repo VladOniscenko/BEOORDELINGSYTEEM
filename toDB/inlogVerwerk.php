@@ -27,7 +27,7 @@
                 $_SESSION['username'] = $username;
                 $_SESSION['klas'] = $klas;
 
-                header("Location:home.php");
+                header("Location:../home.php");
             }
             else{
                 header("location:../index.php?result=Naam en/of wachtwoord zijn fout.");
