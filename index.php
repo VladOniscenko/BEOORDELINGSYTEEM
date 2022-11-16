@@ -10,25 +10,25 @@
     <title>Inlog</title>
 </head>
 <body>
+    
+    <a href="index.php">Inlogen</a>
+
     <form action="./toDB/inlogVerwerk.php" method="post">
 
-    <h1><a href="inlog.php">Inlogen</a></h1>
-
-    <?php
-        if(isset($_GET['result'])){
-            $res = $_GET['result'];
-            echo "<div>$res</div>";
-        }
-    ?>
-    <div id="contentFormPasAan">
+        <?php
+            if(isset($_GET['result'])){
+                $res = $_GET['result'];
+                echo "<div>$res</div>";
+            }
+        ?>
 
         <input type="text" name="username" required max="50" placeholder="Username">
         <input type="password" name="password" required max="30" placeholder="Password">
+        <input type="submit" name="verzend">
         
-        <input id="submitToevoeg" type="submit" name="verzend">
-    </div>
-    
     </form>
+
     <a href="registratie.php">Een nieuwe account aanmaken</a>
+
 </body>
 </html>

@@ -9,6 +9,17 @@
     <title>registratie</title>
 </head>
 <body>
-    
+    <form action="./toDB/registrVerwerk.php" method="post">
+
+        <input type="text" name="username" required max="50" placeholder="Gebruikersnaam">
+        <input type="password" name="password" required max="30" placeholder="Wachtwoord">
+        <input type="password" name="passwordRepeat" required max="30" placeholder="Wachtwoord nogmaals">
+        <input type="text" name="Voornaam" required max="50" placeholder="Gebruikersnaam">
+        <input type="text" name="Achternaam" required max="50" placeholder="Gebruikersnaam">
+        <input type="date" name="Geboorte" required max="50" placeholder="Gebruikersnaam">
+
+        <input type="submit" name="verzend">
+
+    </form>
 </body>
 </html>
