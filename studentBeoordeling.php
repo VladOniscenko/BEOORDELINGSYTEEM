@@ -17,7 +17,7 @@
         <input type="hidden" value="3" name="IDLeerling" id="IDLeerling">
 
         <!-- klas -->
-        <input type="hidden" value="alpha" name="klas" id="klas">
+        <input type="hidden" value="1" name="klas" id="klas">
 
         <!-- sleutelwoord // Onderwerp -->
         <select name="sleutelwoord" id="sleutelwoord">

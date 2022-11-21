@@ -20,11 +20,14 @@
 </html>
 
 <?php
+   $klas = $_SESSION['klas'];
+   echo $klas;
+
 //Voeg de database-verbinding toe
 require './toDB/config.php';
 
 //Maak de query
-$query = "SELECT * FROM tabel_leerlingen";
+$query = "SELECT * FROM tabel_leerlingen WHERE klas = '$klas'";
 
 //Voer de query uit en vang het resultaat op
 $result = mysqli_query($mysqli,$query);
