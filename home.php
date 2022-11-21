@@ -23,10 +23,7 @@
 //Voeg de database-verbinding toe
 require './toDB/config.php';
 
-session_start();
-
 $klas = $_SESSION['klas'];
-
 //Maak de query
 $query = "SELECT * FROM tabel_leerlingen WHERE klas = '$klas'";
 
@@ -68,6 +65,5 @@ if(mysqli_num_rows($result) > 0){
 else
 {
     echo "<p>Geen items gevonden!</p>";
-    echo $klas;
 }
 ?>
