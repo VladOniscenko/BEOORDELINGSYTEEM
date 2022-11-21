@@ -26,6 +26,7 @@
 //Voeg de database-verbinding toe
 require './toDB/config.php';
 
+$klas = $_SESSION['klas'];
 //Maak de query
 $query = "SELECT * FROM tabel_leerlingen WHERE klas = '$klas'";
 
