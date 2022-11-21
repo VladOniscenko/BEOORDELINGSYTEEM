@@ -20,7 +20,7 @@
             echo $query;
 
             if(mysqli_num_rows($result) == 1){
-                //$item = mysqli_fetch_assoc($result);
+                $item = mysqli_fetch_assoc($result);
                 $klas = $item['klas'];
                 
                 session_start();
