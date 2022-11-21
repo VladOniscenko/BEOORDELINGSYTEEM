@@ -21,7 +21,7 @@
 
 <?php
    $klas = $_SESSION['klas'];
-   echo $klas;
+   
 
 //Voeg de database-verbinding toe
 require './toDB/config.php';
