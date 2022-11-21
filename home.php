@@ -23,8 +23,12 @@
 //Voeg de database-verbinding toe
 require './toDB/config.php';
 
+start_session();
+
+$klas = $_SESSION['klas'];
+
 //Maak de query
-$query = "SELECT * FROM tabel_leerlingen";
+$query = "SELECT * FROM tabel_leerlingen WHERE klas = '$klas'";
 
 //Voer de query uit en vang het resultaat op
 $result = mysqli_query($mysqli,$query);
