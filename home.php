@@ -23,7 +23,7 @@
 //Voeg de database-verbinding toe
 require './toDB/config.php';
 
-start_session();
+session_start();
 
 $klas = $_SESSION['klas'];
 
