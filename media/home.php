@@ -51,10 +51,14 @@ if(mysqli_num_rows($result) > 0){
         //toon de gegevens van het item in een tabelrij
         echo "<div class='student'>";
         // echo "<td>" . $item['ID'] . "</td>";
-        echo "<img class='avatar' src='./avatars/" . $item['avatar_leerling'] . "' width='75' height = '90'>";
+        echo "<img class='avatar' src='" . $item['avatar_leerling'] . "' width='75' height = '90'>";
         echo "<div class='naam'>" . $item['voornaam']." "."</div>";
         echo "<div class='naam'>". $item['achternaam']."</div>";
         echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Info</a>";
+        // echo "<td>" . $item['Begindatum']. "</td>";
+        // echo "<td>" . $item['Einddatum']. "</td>";
+        // echo "<td>" . $item['Prioriteit'] . "</td>";
+        // echo "<td>" . $item['Status'] . "</td>";
         echo "</div>";
     }
     //sluit de tabel af
