@@ -11,6 +11,7 @@ require_once './toDB/session.inc.php';
     <title>Informatie</title>
 </head>
 <body>
+    <a href="./home.php">Terug</a>
     <?php
     require './toDB/config.php';
       $id = $_GET['id'];
