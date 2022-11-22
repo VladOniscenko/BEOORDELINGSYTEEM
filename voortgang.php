@@ -71,7 +71,7 @@
             }
             else
             {
-                echo "<p>U heeft nog geen beoordelingen toegevoegd!</p>";
+                echo "<p>Er zijn geen beoordelingen gevonden!</p>";
             }
 
             $aantalPositief = $huiswerkGemaakt + $maaltijdOpgegeten + $speelgoedOpgeruimd + $goedGedragen + $ietsAndersP;
@@ -159,7 +159,8 @@
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
 
-
+                if(datapoint >=1){
+                
                     ctx.fillText(datapoint, x, y);     
                     const xLine = x >= halfwidth ? x + 15 : x -15;
                     const yLine = y >= halfheight ? y + 25 : y -25;
@@ -178,7 +179,8 @@
                     ctx.lineTo(xLine + extraLine, yLine);
                     ctx.stroke();
                     ctx.fillText(' ' + data.labels[index] + ' ', xLine + extraLine + plusPX, yLine);
-                    
+                }
+               
                     
             });
         }

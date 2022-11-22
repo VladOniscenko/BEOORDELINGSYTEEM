@@ -42,7 +42,7 @@
                 echo "<div class='container'>";
                 while($item = mysqli_fetch_assoc($result)){
                     echo "<div class='student'>";
-                    echo "<img class='avatar' src='./avatars/" . $item['avatar_leerling'] . "'>";
+                    echo "<img class='avatar' src='./avatars/" . $item['avatar_leerling'] . "' width='100%'>";
                     echo "<div class='naam'>" . $item['voornaam']." "."</div>";
                     echo "<div class='achternaam'>". $item['achternaam']."</div>";
                     echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Info</a>";
