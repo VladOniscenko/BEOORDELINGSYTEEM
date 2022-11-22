@@ -82,7 +82,7 @@
             $gemPerBeordeling = 100 / $aantalBeoordelingen;
 
             $gemPositief = $gemPerBeordeling * $aantalPositief;
-            $totaal = number_format((double)$gemPositief, 2, '.', '');
+            $totaal = number_format((double)$gemPositief, 1, '.', '');
 
             if($totaal >= 50){
                 $fontTotaal = 'rgb(153, 230, 30)';
@@ -137,7 +137,7 @@
             'rgb(230, 46, 46)',
         ],
         borderWidth: 1,
-        cutout: '80%',
+        cutout: '90%',
         borderRadius: 0,
         offset: 0
       }]
@@ -196,7 +196,7 @@
             const textWidth = ctx.measureText(totaal).width;
 
 
-            ctx.font = 'bold 45px sans-serif';
+            ctx.font = 'bold 60px sans-serif';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             ctx.fillStyle = fontTotaal;
