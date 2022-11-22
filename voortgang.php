@@ -14,8 +14,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voortgang</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Charts.css">
 </head>
 <body>
     <!-- HEADER -->
@@ -88,35 +86,118 @@
             
             echo "<div>$totaal%</div><br>";
         ?>
-        <canvas id="myChart" width="400" height="150"></canvas>
+        <!-- DOOR HEIGHT VAN CANVAS BEPAAL JE HOE GROOT CIRKEL WORD -->
+        <div><canvas id="myChart" width="400" height="500"></canvas></div>
     </main>
 
     <!-- FOOTER -->
     <footer>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
         let ctx = document.getElementById("myChart");
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-            labels: ['Huiswerk gemaakt', 'Maaltijd opgegeten', 'Speelgoed opgeruimd', 'Goed gedragen', 'Iets anders positief', 'Huiswerk niet gemaakt', 'Maaltijd niet opgegeten', 'Speelgoed niet opgeruimd', 'Niet goed gedragen', 'Iets anders negatief'],
-            datasets: [{
-                label: '# of Votes',
-                data: [<?php echo "$huiswerkGemaakt, $maaltijdOpgegeten, $speelgoedOpgeruimd, $goedGedragen, $ietsAndersP, $huiswerkNietGemaakt, $maaltijdNietOpgegeten, $speelgoedNietOpgeruimd, $goedNietGedragen, $ietsAndersN" ?>],
-                borderWidth: 1
-            }]
+
+        
+
+    // setup 
+    const data = {
+        labels: ['Huiswerk gemaakt', 'Maaltijd opgegeten', 'Speelgoed opgeruimd', 'Goed gedragen', 'Iets anders positief', 'Huiswerk niet gemaakt', 'Maaltijd niet opgegeten', 'Speelgoed niet opgeruimd', 'Niet goed gedragen', 'Iets anders negatief'],
+      datasets: [{
+        label: 'Weekly Sales',
+        data: [<?php echo "$huiswerkGemaakt, $maaltijdOpgegeten, $speelgoedOpgeruimd, $goedGedragen, $ietsAndersP, $huiswerkNietGemaakt, $maaltijdNietOpgegeten, $speelgoedNietOpgeruimd, $goedNietGedragen, $ietsAndersN" ?>],
+        backgroundColor: [
+          'rgb(153, 230, 30, 0.5)',
+          'rgb(153, 230, 30, 0.5)',
+          'rgb(153, 230, 30, 0.5)',
+          'rgb(153, 230, 30, 0.5)',
+          'rgb(153, 230, 30, 0.5)',
+          'rgb(230, 46, 46, 0.5)',
+          'rgb(230, 46, 46, 0.5)',
+          'rgb(230, 46, 46, 0.5)',
+          'rgb(230, 46, 46, 0.5)',
+          'rgb(230, 46, 46, 0.5)',
+        ],
+        borderColor: [
+            'rgb(153, 230, 30)',
+            'rgb(153, 230, 30)',
+            'rgb(153, 230, 30)',
+            'rgb(153, 230, 30)',
+            'rgb(153, 230, 30)',
+            'rgb(230, 46, 46)',
+            'rgb(230, 46, 46)',
+            'rgb(230, 46, 46)',
+            'rgb(230, 46, 46)',
+            'rgb(230, 46, 46)',
+        ],
+        borderWidth: 1,
+        cutout: '80%',
+        borderRadius: 20,
+      }]
+    };
+
+    // const doughnutLabelsLine = {
+    //     id: 'doughnutLabelsLine',
+    //     afterDraw(chart, args, options){
+    //         const{ ctx, chartArea: {top, bottom, left, right, width, height}} = chart;
+
+    //         chart.data.datasets.foreach((dataset, i) =>{
+                
+    //             chart.getDatasetMeta(i).data.foreach((datapoint, index) =>{
+    //                 const[x, y] = datapoint.tooltipPosition();
+    //                 ctx.fillStyle = dataset.borderColor[index];
+    //                 ctx.fill();
+    //                 ctx.fillRect(x,y, 10, 10);
+
+    //                 // const halfwidth = width / 2;
+    //                 // const halfheight = height / 2;
+
+    //                 // const xLine = x >= halfwidth ? x + 15 : x -15;
+    //                 // const yLine = y >= halfheight ? y + 15 : y -15;
+    //                 // const extraLine = x >= halfwidth ? 15 : -15;
+
+    //                 // ctx.beginPath();
+    //                 // ctx.moveTo(x, y);
+    //                 // ctx.lineTo(xLine, y);
+    //                 // ctx.strokeStyle = dataset.borderColor[index];
+    //                 // ctx.stroke();
+    //             })
+
+                
+    //         })
+    //     }
+    // }
+
+    // config 
+    const config = {
+        type: 'doughnut',
+        data,
+        options: {
+            layout:{
+                padding: 20
             },
-            options: {
+            maintainAspectRatio: false,
             scales: {
                 y: {
-                beginAtZero: true
+                    beginAtZero: true
+                }
+                },
+            plugins: {
+                legend: {
+                    display: false
                 }
             }
-            }
-        });
+        },
+        //plugins: [doughnutLabelsLine]
+    };
+
+    
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
     </script>
 </body>
 </html>
