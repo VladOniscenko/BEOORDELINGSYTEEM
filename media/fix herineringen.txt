@@ -1,0 +1,5 @@
+geboorte check en in verwerk
+
+wachtwoord pattern en chech in verwerk
+
+email check verwerk voor pattern
