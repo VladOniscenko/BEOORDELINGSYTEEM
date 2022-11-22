@@ -1,6 +1,10 @@
 <!-- Hier komt een groeps voortgang pagina. -->
 <?php
-    require 'config.php';
+    require_once './toDB/session.inc.php';
+?>
+<?php
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE html>
@@ -12,43 +16,63 @@
     <title>Voortgang</title>
 </head>
 <body>
-    <?php
-        require 'config.php';
-        $query = "SELECT * FROM `crud_agenda` ORDER BY `Prioriteit`";
-        
-        $result = mysqli_query($mysqli, $query);
-        if(!$result){
-            echo "<p>FOUT!</p>";
-            echo "<p>" . $query . "</p>";
-            echo "<p>" . mysqli_error($mysqli) . "</p>";
-            exit;
-        }
-        $mysqli->close();
+    <!-- HEADER -->
+    <header>
+        <h1>Voortgang</h1>
+        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
+        <a href="./voortgang.php">Voortgang</a>
+        <a href="./home.php">Klas</a>
+    </header>
 
-        if(mysqli_num_rows($result) > 0){
-            while($item = mysqli_fetch_array($result)){
-                $ID = $item['ID'];
-                $ID_leerling = $item['Onderwerp'];
-                $klas = $item['Inhoud'];
-                $Begindatum = $item['Begindatum'];
-                $Einddatum = $item['Einddatum'];
-                $Prioriteit = $item['Prioriteit'];
-                $Status = $item['Status'];
-    
-                echo 
-                "<tr>
-                    <td><a id='detaillls' href='detail.php?id=$ID'>Details &lAarr;</a></td>
-                    <td>$Prioriteit</td>
-                    <td>$Onderwerp</td>
-                    <td>$Einddatum</td>
-                    <td><a id='bewerken' href='pasaan.php?id=$ID'>Bewerken</a></td>
-                    <td><a id='verwijderen' href='verwijder.php?id=$ID'>Verwijderen</a></td>
-                </tr>";
+    <!-- MAIN -->
+    <main>
+        <?php
+            require './toDB/config.php';
+            $klas = $_SESSION['klas'];
+            
+            $query = "SELECT * FROM tabel_beoordelingen WHERE klas = '$klas'";
+            $result = mysqli_query($mysqli,$query);
+
+            $aantalPositief = 0;
+            $aantalNegatief = 0;
+
+            
+
+            if(mysqli_num_rows($result) > 0){
+                while($item = mysqli_fetch_assoc($result)){
+                    // $id = $item['ID'];
+                    // $id_leerling = $item['ID_leerling'];
+                    $categorie = $item['categorie_beoordeling'];
+                    $sleutel = $item['sleutelwoord_beoordeling'];
+
+                    if($categorie == "positief"){
+                        $aantalPositief++;
+                    }
+                    elseif($categorie == "negatief"){
+                        $aantalNegatief++;
+                    }
+                    
+
+                }
             }
-        }
-        else{
-            echo "<p>Geen items gevonden!</p>";
-        }
-    ?>
+            else
+            {
+                echo "<p>U heeft nog geen leerlingen toegevoegd aan uw klas!</p>";
+            }
+
+            $aantalBeoordelingen = $aantalNegatief + $aantalPositief;
+            $gemPerBeordeling = 100 / $aantalBeoordelingen;
+            $gemPositief = $gemPerBeordeling * $aantalPositief;
+            $totaal = number_format((float)$gemPositief, 2, '.', '');
+            
+            //echo "<div>$totaal</div><br>";
+        ?>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+    </footer>
 </body>
 </html>
