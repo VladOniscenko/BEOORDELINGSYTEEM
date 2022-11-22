@@ -13,6 +13,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<<<<<<< HEAD
+    <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
+    <h1>Klasoverzicht</h1>
+    <a class="toevoegen" href="studentToevoeg.php">Voeg een nieuw student toe</a>
+</body>
+</html>
+
+<?php
+   $klas = $_SESSION['klas'];
+   
+=======
     <!-- HEADER -->
     <header>
         <h1>Klasoverzicht</h1>
@@ -21,6 +32,7 @@
         <a href="./home.php">Klas</a>
         <a class="toevoegen" href="">Voeg een nieuw student toe</a>        
     </header>
+>>>>>>> 5d8f9d6a64bd0b42fd861adc9d98f71e9309660c
 
     <!-- MAIN -->
     <main>
