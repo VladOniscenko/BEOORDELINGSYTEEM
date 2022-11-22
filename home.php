@@ -13,26 +13,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<<<<<<< HEAD
-    <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
-    <h1>Klasoverzicht</h1>
-    <a class="toevoegen" href="studentToevoeg.php">Voeg een nieuw student toe</a>
-</body>
-</html>
-
-<?php
-   $klas = $_SESSION['klas'];
-   
-=======
     <!-- HEADER -->
     <header>
         <h1>Klasoverzicht</h1>
         <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
         <a href="./voortgang.php">Voortgang</a>
         <a href="./home.php">Klas</a>
-        <a class="toevoegen" href="">Voeg een nieuw student toe</a>        
+        <a class="toevoegen" href="./studentToevoeg.php">Voeg een nieuw student toe</a>        
     </header>
->>>>>>> 5d8f9d6a64bd0b42fd861adc9d98f71e9309660c
 
     <!-- MAIN -->
     <main>
@@ -54,7 +42,7 @@
                 echo "<div class='container'>";
                 while($item = mysqli_fetch_assoc($result)){
                     echo "<div class='student'>";
-                    echo "<img class='avatar' src='" . $item['avatar_leerling'] . "' width='75' height = '90'>";
+                    echo "<img class='avatar' src='./avatars/" . $item['avatar_leerling'] . "' width='75' height = '90'>";
                     echo "<div class='naam'>" . $item['voornaam']." "."</div>";
                     echo "<div class='achternaam'>". $item['achternaam']."</div>";
                     echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Info</a>";
