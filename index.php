@@ -23,8 +23,8 @@
             </legend>
 
             <?php
-        if (isset($_GET['result'])) {
-            $res = $_GET['result'];
+        if (isset($_GET['message'])) {
+            $res = $_GET['message'];
             echo "<div>$res</div>";
         }
         ?>

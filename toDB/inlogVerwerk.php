@@ -30,7 +30,7 @@
                 header("Location:../home.php");
             }
             else{
-                header("location:../index.php?result=Naam en/of wachtwoord zijn fout.");
+                header("location:../index.php?message=Naam en/of wachtwoord zijn fout.");
             }
         }
     }

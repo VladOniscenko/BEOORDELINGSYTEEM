@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="./toDB/loguit.php">Uitlogen</a>
+    <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
     <h1>Klasoverzicht</h1>
     <a class="toevoegen" href="">Voeg een nieuw student toe</a>
 </body>
