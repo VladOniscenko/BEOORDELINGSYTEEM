@@ -72,12 +72,12 @@
                 $insertResult = mysqli_query($mysqli, $insertQuery);
 
                 if($insertResult){
-                    header("location:../registratie.php?message=Uw account is succsesvol aangemaakt!");
+                    header("location:../index.php?message=Uw account is succsesvol aangemaakt!");
                 }else{
                     $delQuery = "DELETE FROM `inlog_docent` WHERE `gebruikersnaam` = '$userN'";
                     $delResult = mysqli_query($mysqli, $delQuery);
 
-                    header("location:../registratie.php?message=Uw account is niet aangemaakt probeer later nog maals!");
+                    header("location:../index.php?message=Uw account is niet aangemaakt probeer later nog maals!");
                 }
             }
         }
