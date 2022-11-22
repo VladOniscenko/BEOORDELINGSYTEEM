@@ -15,7 +15,7 @@
 <body>
     <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
     <h1>Klasoverzicht</h1>
-    <a class="toevoegen" href="">Voeg een nieuw student toe</a>
+    <a class="toevoegen" href="studentToevoeg.php">Voeg een nieuw student toe</a>
 </body>
 </html>
 
