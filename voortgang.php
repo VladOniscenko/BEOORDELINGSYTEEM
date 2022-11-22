@@ -83,8 +83,14 @@
 
             $gemPositief = $gemPerBeordeling * $aantalPositief;
             $totaal = number_format((double)$gemPositief, 2, '.', '');
+
+            if($totaal >= 50){
+                $fontTotaal = 'rgb(153, 230, 30)';
+            }
+            else{
+                $fontTotaal = 'rgb(230, 46, 46)';
+            }
             
-            echo "<div>$totaal%</div><br>";
         ?>
         <!-- DOOR HEIGHT VAN CANVAS BEPAAL JE HOE GROOT CIRKEL WORD -->
         <div><canvas id="myChart" width="400" height="500"></canvas></div>
@@ -104,7 +110,7 @@
     const data = {
         labels: ['Huiswerk gemaakt', 'Maaltijd opgegeten', 'Speelgoed opgeruimd', 'Goed gedragen', 'Iets anders positief', 'Huiswerk niet gemaakt', 'Maaltijd niet opgegeten', 'Speelgoed niet opgeruimd', 'Niet goed gedragen', 'Iets anders negatief'],
       datasets: [{
-        label: 'Weekly Sales',
+        label: 'Aantal beoordelingen',
         data: [<?php echo "$huiswerkGemaakt, $maaltijdOpgegeten, $speelgoedOpgeruimd, $goedGedragen, $ietsAndersP, $huiswerkNietGemaakt, $maaltijdNietOpgegeten, $speelgoedNietOpgeruimd, $goedNietGedragen, $ietsAndersN" ?>],
         backgroundColor: [
           'rgb(153, 230, 30, 0.5)',
@@ -132,41 +138,73 @@
         ],
         borderWidth: 1,
         cutout: '80%',
-        borderRadius: 20,
+        borderRadius: 0,
+        offset: 0
       }]
     };
 
-    // const doughnutLabelsLine = {
-    //     id: 'doughnutLabelsLine',
-    //     afterDraw(chart, args, options){
-    //         const{ ctx, chartArea: {top, bottom, left, right, width, height}} = chart;
+    const customDatalabels = {
+        id: 'customDatalabels',
+        afterDatasetsDraw(chart, args, pluginOptions){
+            const{ ctx, data, chartArea: {top, bottom, left, right, width, height}} = chart;
 
-    //         chart.data.datasets.foreach((dataset, i) =>{
-                
-    //             chart.getDatasetMeta(i).data.foreach((datapoint, index) =>{
-    //                 const[x, y] = datapoint.tooltipPosition();
-    //                 ctx.fillStyle = dataset.borderColor[index];
-    //                 ctx.fill();
-    //                 ctx.fillRect(x,y, 10, 10);
+            ctx.save();
+            const halfwidth = width / 2 + left;
+            const halfheight = height / 2 + top;
 
-    //                 // const halfwidth = width / 2;
-    //                 // const halfheight = height / 2;
+            data.datasets[0].data.forEach((datapoint, index) =>{
+                const {x, y} = chart.getDatasetMeta(0).data[index].tooltipPosition();
+                ctx.font = 'bold 12px sans-serif';
+                ctx.fillStyle = data.datasets[0].borderColor[index];
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
 
-    //                 // const xLine = x >= halfwidth ? x + 15 : x -15;
-    //                 // const yLine = y >= halfheight ? y + 15 : y -15;
-    //                 // const extraLine = x >= halfwidth ? 15 : -15;
 
-    //                 // ctx.beginPath();
-    //                 // ctx.moveTo(x, y);
-    //                 // ctx.lineTo(xLine, y);
-    //                 // ctx.strokeStyle = dataset.borderColor[index];
-    //                 // ctx.stroke();
-    //             })
+                    ctx.fillText(datapoint, x, y);     
+                    const xLine = x >= halfwidth ? x + 15 : x -15;
+                    const yLine = y >= halfheight ? y + 25 : y -25;
+                    const extraLine = x >= halfwidth ? 15 : -15;
 
-                
-    //         })
-    //     }
-    // }
+                    const textWidth = ctx.measureText(data.labels[index]).width;
+                    const textWidthPosition = x >= halfwidth ? 'left' : 'right';
+                    const plusPX = x >= halfwidth ? 10 : -10;
+
+                    ctx.textAlign = textWidthPosition;
+
+                    ctx.strokeStyle = data.datasets[0].borderColor[index];
+                    ctx.beginPath();
+                    ctx.moveTo(x, y);
+                    ctx.lineTo(xLine, yLine);
+                    ctx.lineTo(xLine + extraLine, yLine);
+                    ctx.stroke();
+                    ctx.fillText(' ' + data.labels[index] + ' ', xLine + extraLine + plusPX, yLine);
+                    
+                    
+            });
+        }
+    }
+
+    const procentenInCirkel = {
+        id: 'procentenInCirkel',
+        afterDatasetsDraw(chart, args, pluginOptions){
+            
+            const{ ctx, data, chartArea: {top, bottom, left, right, width, height}} = chart;
+            ctx.save();
+
+            const fontTotaal = '<?php echo $fontTotaal?>';
+            const totaal = '  <?php echo $totaal?>%';
+            const textWidth = ctx.measureText(totaal).width;
+
+
+            ctx.font = 'bold 45px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = fontTotaal;
+            ctx.fillText(totaal, (width / 2)+textWidth, top + (height /2));
+            ctx.restore();
+
+        }
+    }
 
     // config 
     const config = {
@@ -174,7 +212,7 @@
         data,
         options: {
             layout:{
-                padding: 20
+                padding: 30
             },
             maintainAspectRatio: false,
             scales: {
@@ -188,7 +226,7 @@
                 }
             }
         },
-        //plugins: [doughnutLabelsLine]
+        plugins: [customDatalabels,procentenInCirkel]
     };
 
     
