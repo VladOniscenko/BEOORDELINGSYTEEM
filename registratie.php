@@ -17,20 +17,28 @@
     <form action="./toDB/registrVerwerk.php" method="post" class="loginContainer">
         <fieldset>
             <legend><h1>Registreren</h1></legend>
+
             <label for="gebruikersnaam">Gebruikersnaam</label>
             <input type="text" name="gebruikersnaam" required min="5" max="50" placeholder="Gebruikersnaam">
-            <label for="wachtwoord">Wachtwoord</label>
-            <input type="password" name="wachtwoord" required  min="5" max="50" placeholder="Wachtwoord">
-            <label for="wachtwoordRepeat">Wachtwoord nogmaals</label>
-            <input type="password" name="wachtwoordRepeat" required  min="5" max="50" placeholder="Wachtwoord nogmaals">
-            <label for="voornaam">Voornaam</label>
-            <input type="text" name="voornaam" required min="3" max="50" placeholder="Voornaam">
-            <label for="achternaam">Achternaam</label>
-            <input type="text" name="achternaam" required min="3" max="50" placeholder="Achternaam">
-            <label for="geboorte">Geboortedatum</label>
-            <input type="date" name="geboorte" required placeholder="Geboortedatum">
+            
             <label for="email">Email</label>
             <input type="email" name="email" required max="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="E-mail">
+            
+            <label for="wachtwoord">Wachtwoord</label>
+            <input type="password" name="wachtwoord" required  min="5" max="50" placeholder="Wachtwoord">
+            
+            <label for="wachtwoordRepeat">Wachtwoord nogmaals</label>
+            <input type="password" name="wachtwoordRepeat" required  min="5" max="50" placeholder="Wachtwoord nogmaals">
+            
+            <label for="voornaam">Voornaam</label>
+            <input type="text" name="voornaam" required min="3" max="50" placeholder="Voornaam">
+            
+            <label for="achternaam">Achternaam</label>
+            <input type="text" name="achternaam" required min="3" max="50" placeholder="Achternaam">
+            
+            <label for="geboorte">Geboortedatum</label>
+            <input type="date" name="geboorte" required placeholder="Geboortedatum">
+            
             <div class="twoButtonContainer">
                 <a href="./index.php">Terug naar inlog</a>
                 <input type="submit" name="verzend">
