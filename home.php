@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<<<<<<< HEAD
     <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
     <h1>Klasoverzicht</h1>
     <a class="toevoegen" href="studentToevoeg.php">Voeg een nieuw student toe</a>
@@ -22,47 +23,55 @@
 <?php
    $klas = $_SESSION['klas'];
    
+=======
+    <!-- HEADER -->
+    <header>
+        <h1>Klasoverzicht</h1>
+        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
+        <a href="./voortgang.php">Voortgang</a>
+        <a href="./home.php">Klas</a>
+        <a class="toevoegen" href="">Voeg een nieuw student toe</a>        
+    </header>
+>>>>>>> 5d8f9d6a64bd0b42fd861adc9d98f71e9309660c
 
-//Voeg de database-verbinding toe
-require './toDB/config.php';
+    <!-- MAIN -->
+    <main>
+        <?php
+            $klas = $_SESSION['klas'];
+            require './toDB/config.php';
+            $query = "SELECT * FROM tabel_leerlingen WHERE klas = '$klas'";
+            $result = mysqli_query($mysqli,$query);
 
-$klas = $_SESSION['klas'];
-//Maak de query
-$query = "SELECT * FROM tabel_leerlingen WHERE klas = '$klas'";
+            if(!$result){
+                echo "<p>FOUT:</p>";
+                echo "<p>" . $query . "</p>";
+                echo "<p>" . mysqli_error($mysqli) . "</p>";
+                exit;
+            }
 
-//Voer de query uit en vang het resultaat op
-$result = mysqli_query($mysqli,$query);
+            if(mysqli_num_rows($result) > 0){
+                // DIT IS WAT OP PAGINA KOMT
+                echo "<div class='container'>";
+                while($item = mysqli_fetch_assoc($result)){
+                    echo "<div class='student'>";
+                    echo "<img class='avatar' src='" . $item['avatar_leerling'] . "' width='75' height = '90'>";
+                    echo "<div class='naam'>" . $item['voornaam']." "."</div>";
+                    echo "<div class='achternaam'>". $item['achternaam']."</div>";
+                    echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Info</a>";
+                    echo "</div>";
+                }
+                echo "</div>";
+            }
+            else
+            {
+                echo "<p>U heeft nog geen leerlingen toegevoegd aan uw klas!</p>";
+            }
+        ?>
+    </main>
 
+    <!-- FOOTER -->
+    <footer>
 
-if(!$result){
-    echo "<p>FOUT:</p>";
-    echo "<p>" . $query . "</p>";
-    echo "<p>" . mysqli_error($mysqli) . "</p>";
-    exit;
-}
-    
-
-//Als er records zijn...
-if(mysqli_num_rows($result) > 0){
-    //maak een hoofdDiv
-    echo "<div class='container'>";
-    //zolang er items uit te lezen zijn...
-    while($item = mysqli_fetch_assoc($result)){
-        //toon de gegevens van het item in een tabelrij
-        echo "<div class='student'>";
-        // echo "<td>" . $item['ID'] . "</td>";
-        echo "<img class='avatar' src='./avatars/" . $item['avatar_leerling'] . "' width='75' height = '90'>";
-        echo "<div class='naam'>" . $item['voornaam']." "."</div>";
-        echo "<div class='naam'>". $item['achternaam']."</div>";
-        echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Info</a>";
-        echo "</div>";
-    }
-    //sluit de tabel af
-    echo "</div>";
-}
-//Als er geen records zijn...
-else
-{
-    echo "<p>Geen items gevonden!</p>";
-}
-?>
+    </footer>
+</body>
+</html>

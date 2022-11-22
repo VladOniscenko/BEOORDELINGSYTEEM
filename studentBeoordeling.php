@@ -21,14 +21,17 @@
 
         <!-- sleutelwoord // Onderwerp -->
         <select name="sleutelwoord" id="sleutelwoord">
-            <option value="huiswerk">Huiswerk</option>
-            <option value="ontbijt">Ontbijt</option>
-            <option value="speeltijd">Speeltijd</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="iets anders.">iets anders.</option>
+            <option value="huiswerk">Huiswerk gemaakt</option>
+            <option value="ontbijt">Maaltijd opgegeten</option>
+            <option value="speeltijd">Speelgoed opgeruimd</option>
+            <option value="gedrag">Goed gedragen</option>
+            <option value="iets anders.">Iets anders positief</option>
+
+            <option value="huiswerk">Huiswerk niet gemaakt</option>
+            <option value="ontbijt">Maaltijd niet opgegeten</option>
+            <option value="speeltijd">Speelgoed niet opgeruimd</option>
+            <option value="gedrag">Niet goed gedragen</option>
+            <option value="iets anders.">Iets anders negatief</option>
         </select>
 
         <!-- soort beoordeling -->
