@@ -34,7 +34,7 @@
             <input type="password" name="password" required max="30" placeholder="Password">
             <div class="twoButtonContainer">
                 <a href="registratie.php">Registreren</a>
-                <input type="submit" name="verzend" value="inloggen">
+                <input type="submit" name="verzend" value="inloggen" class="button">
             </div>
 
         </fieldset>

@@ -10,33 +10,58 @@
 html, 
 body {
     height: 100%;
-    padding: 0;
     margin: 0;
-    background-color: var(--clr-dark-shade);
 }
+
+body{
+    background-color: var(--clr-light-shade);
+}
+
+.button {
+    background-color: var(--clr-main);
+    border: none;
+    color: var(--clr-light-shade);
+    border-radius: 5px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
 
   .twoButtonContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
     margin-top: auto;
+    margin-bottom: 10px;
   }
+
+  .twoButtonContainer > a{
+    margin: auto 0;
+  }
+
+  input[type=text],input[type=password] {
+    border-radius: 10px;
+    border: 0px;
+    padding: 10px;
+  }
+
+  /* LOGIN PAGE */
 
 .loginPage{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    background-color: var(--clr-dark-shade);
 }
 
 .loginContainer{
     background-color: var(--clr-light-shade);
     margin: auto;
-    width: 80%;
-    padding: 4% 4% 4% 4%;
+    width: 100%;
+    max-width: 650px;
     border-radius: 10px;
-    box-shadow: rgb(0, 32, 19) 0px 0px 20px;
 }
 .loginContainer > fieldset{
     display: flex;
@@ -44,8 +69,6 @@ body {
     flex-direction: column;
     align-items: center;
     border: 0;
-    width: 70%;
-    height: 100%;
     font-size: large;
 }
 
@@ -56,27 +79,15 @@ body {
 
 .loginContainer > fieldset > label{
     margin-right:auto ;
+    margin-left: 15%;
 }
 
 .loginContainer > fieldset > input{
     margin-bottom: 40px;
-    width: 100%;
+    width: 70%;
     height: 20px;
 }
 
-
-@media only screen and (min-width: 768px) {
-    .loginContainer{
-        width: 60%;
-    }
-}
-
-@media only screen and (min-width: 900px) {
-    .loginContainer{
-        width: 45%;
-
-    }
-}
 
 
 .student{
