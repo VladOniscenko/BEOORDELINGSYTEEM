@@ -7,3 +7,13 @@
     --clr-dark-accent: #956E38;
     --clr-dark-shade: #2C2D35;
 }
+
+html,
+body{
+    height: 100%;
+}
+
+.wrapper{
+    width: 600px;
+    max-width: 100%;
+}
