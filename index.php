@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="loginPage">
+<body>
 
 
 
-    <form action="./toDB/inlogVerwerk.php" method="post" class="loginContainer">
+    <form action="./toDB/inlogVerwerk.php" method="post">
         <fieldset>
             <legend>
                 <h1>Inloggen</h1>
@@ -32,9 +32,9 @@
             <input type="text" name="username" required max="50" placeholder="Username">
             <label for="password">Password</label>
             <input type="password" name="password" required max="30" placeholder="Password">
-            <div class="twoButtonContainer">
+            <div>
                 <a href="registratie.php">Registreren</a>
-                <input type="submit" name="verzend" value="inloggen" class="button">
+                <input type="submit" name="verzend" value="inloggen"f>
             </div>
 
         </fieldset>
