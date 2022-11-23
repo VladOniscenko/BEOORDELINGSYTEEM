@@ -16,10 +16,12 @@
     <!-- HEADER -->
     <header>
         <h1>Klasoverzicht</h1>
-        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
-        <a href="./voortgang.php">Voortgang</a>
-        <a href="./home.php">Klas</a>
-        <a class="toevoegen" href="./studentToevoeg.php">Voeg een nieuw student toe</a>        
+        <div>
+            <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
+            <a href="./voortgang.php">Voortgang</a>
+            <a href="./home.php">Klas</a>
+            <a class="toevoegen" href="./studentToevoeg.php">Voeg een nieuw student toe</a>
+        </div>        
     </header>
 
     <!-- MAIN -->
@@ -39,7 +41,7 @@
 
             if(mysqli_num_rows($result) > 0){
                 // DIT IS WAT OP PAGINA KOMT
-                echo "<div class='container'>";
+                echo "<div class='studentContainer'>";
                 while($item = mysqli_fetch_assoc($result)){
                     echo "<div class='student'>";
                     echo "<img class='avatar' src='./avatars/" . $item['avatar_leerling'] . "' width='100%'>";

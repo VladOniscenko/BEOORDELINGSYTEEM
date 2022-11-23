@@ -1,6 +1,7 @@
 :root{
     /* Colors */
     --clr-light-shade: #F6F3F5;
+    --clr-light-shade2: #eae8e9;
     --clr-light-accent: #84AAA4;
     --clr-main: #8FE507;
     --clr-dark-accent: #956E38;
@@ -15,6 +16,10 @@ body {
 
 body{
     background-color: var(--clr-light-shade);
+}
+
+a{
+    color: var(--clr-main-darker);
 }
 
 .button {
@@ -88,9 +93,31 @@ body{
     height: 20px;
 }
 
+/*HOME*/
 
+header{
+    background-color: var(--clr-dark-shade);
+    color: var(--clr-light-shade);
+}
 
-.student{
+header > h1{
+    margin: 0px;
+}
+
+header > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.studentContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin:4%;
+}
+
+.studentContainer > div{
+    min-width: 170px;
     width: 170px;
     display: inline-block;
     margin: 1%;
@@ -99,9 +126,7 @@ body{
 h1{
     text-align: center;
 }
-.container{
-    margin:4%;
-}
+
 .toevoegen{
     margin-left: 4%;
 }
