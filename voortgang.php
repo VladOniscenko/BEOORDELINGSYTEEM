@@ -14,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voortgang</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <!-- HEADER -->
@@ -93,7 +94,7 @@
             
         ?>
         <!-- DOOR HEIGHT VAN CANVAS BEPAAL JE HOE GROOT CIRKEL WORD -->
-        <div><canvas id="myChart" width="400" height="500"></canvas></div>
+        <div id="mijnCanvas"><canvas width="600px" id="myChart"></canvas></div>
     </main>
 
     <!-- FOOTER -->
@@ -193,16 +194,17 @@
             const{ ctx, data, chartArea: {top, bottom, left, right, width, height}} = chart;
             ctx.save();
 
-            const fontTotaal = '<?php echo $fontTotaal?>';
-            const totaal = '  <?php echo $totaal?>%';
-            const textWidth = ctx.measureText(totaal).width;
+            
 
 
             ctx.font = 'bold 60px sans-serif';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
+            const fontTotaal = '<?php echo $fontTotaal?>';
+            const totaal = '  <?php echo $totaal?>%';
+            const textWidth = ctx.measureText(totaal).width;
             ctx.fillStyle = fontTotaal;
-            ctx.fillText(totaal, (width / 2)+textWidth, top + (height /2));
+            ctx.fillText(totaal, (width / 2)+10, top + (height /2));
             ctx.restore();
 
         }
@@ -217,11 +219,7 @@
                 padding: 30
             },
             maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-                },
+
             plugins: {
                 legend: {
                     display: false

@@ -1,5 +1,9 @@
-geboorte check en in verwerk
+geboorte check en in verwerk  // VLAD
 
-wachtwoord pattern en chech in verwerk
+wachtwoord pattern en chech in verwerk  // VLAD
 
-email check verwerk voor pattern
+email check verwerk voor pattern // VLAD
+
+tabel van beoordelingen van student zelf op pagina laten zien. // BATUHAN
+
+enum in db veranderen kijk reader laatste pagina // VLAD
