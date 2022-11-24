@@ -2,22 +2,22 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inlog</title>
-    <link rel="stylesheet" href="style.sass">
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="h-100">
 <div class="h-100 d-flex align-items-center justify-content-center bg-dark">
-    <div class="wrapper bg-light border-3">
-        <h1 class="p-4 mb-3">Inloggen</h1>
-        <form action="./toDB/inlogVerwerk.php" method="post" class="p-4">
+    <div class="wrapper bg-light border-3 wi">
+        <h1 class="p-5 pb-3 mb-3">Inloggen</h1>
+        <form action="./toDB/inlogVerwerk.php" method="post" class="p-5">
             <?php
                 if (isset($_GET['message'])) {
                     $res = $_GET['message'];
