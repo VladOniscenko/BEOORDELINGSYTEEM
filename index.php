@@ -31,7 +31,7 @@
             <label for="username">Username</label>
             <input type="text" name="username" required max="50" placeholder="Username">
             <label for="password">Password</label>
-            <input type="password" name="password" required max="30" placeholder="Password">
+            <input type="password" name="password" required max="30" placeholder="Password" class="mb90px">
             <div class="twoButtonContainer">
                 <a href="registratie.php">Registreren</a>
                 <input type="submit" name="verzend" value="inloggen" class="button">
