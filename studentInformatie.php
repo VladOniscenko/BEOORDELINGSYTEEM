@@ -134,7 +134,7 @@ if(mysqli_num_rows($result3) > 0){
 }
 //Als er geen positieve beoordeling op staat, toon deze:
 else{
-    echo "Er is geen positieve beoordeling gevonden in het systeem. <br>";
+    echo "<br>Er is geen positieve beoordeling gevonden in het systeem. <br>";
 }
 if(mysqli_num_rows($result4) > 0){
     //TONEN VAN POSITIEVE BEOORDELINGEN IN DE TABEL
@@ -156,7 +156,7 @@ if(mysqli_num_rows($result4) > 0){
 }
 //Als er geen negatieve beoordeling op staat, toon deze:
 else{
-    echo "Er is geen negatieve beoordeling gevonden in het systeem. <br>";
+    echo "<br>Er is geen negatieve beoordeling gevonden in het systeem. <br>";
 }
 
     ?>
