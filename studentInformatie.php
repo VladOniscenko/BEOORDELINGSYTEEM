@@ -74,32 +74,32 @@ if(mysqli_num_rows($result) > 0){
         
         //AVATAR EN LEERLINGNUMMER
         echo "<img class='avatar' src='./avatars/" . $item['avatar_leerling'] . "'>";
-        echo "<div class='leerlingnummer'>Leerlingnummer: ".$item['leerlingnummer']."</div>";
+        echo "<div class='leerlingnummer'>Leerlingnummer: " . $item['leerlingnummer']."</div>";
         
         //VOORNAAM EN ACHTERNAAM
-        echo "<div class='voornaam'>Voornaam: " . $item['voornaam']."</div>";
-        echo "<div class='achternaam'>Achternaam: ". $item['achternaam']."</div>";
+        echo "<div class='voornaam'>Voornaam: " . $item['voornaam'] . "</div>";
+        echo "<div class='achternaam'>Achternaam: " . $item['achternaam'] . "</div>";
         
         //GEBOORTEDATUM EN NAAM VAN DE KLAS
         echo "<div class='geboortedatum'>Geboortedatum " . date("d-m-Y",strtotime($item['geboortedatum'])) . "</div>";
         echo "<div class='groepsnaam'>Groepsnaam: $groepsnaam</div>";
 
         //AANTAL MIN- EN PLUSPUNTEN
-        echo "<div style='color: green;' class='pluspunten'>Aantal pluspunten: " .$item['pluspunten_leerling']. "</div>";
-        echo "<div style='color: red;' class='pluspunten'>Aantal minpunten: " . $item['minpunten_leerling']. "</div><br>";
+        echo "<div style='color: green;' class='pluspunten'>Aantal pluspunten: " . $item['pluspunten_leerling'] . "</div>";
+        echo "<div style='color: red;' class='pluspunten'>Aantal minpunten: " . $item['minpunten_leerling'] . "</div><br>";
 
         //GEGEVENS VAN DE VERZORGER TONEN
         echo "<h3>Gegevens van de verzorger</h3>";
 
         //NAAM
-        echo "<div class='naamVerzorger'>Naam Verzorger: ". $item['Naam_Verzorger']."</div>";
+        echo "<div class='naamVerzorger'>Naam Verzorger: " . $item['Naam_Verzorger'] . "</div>";
         
         //E-MAIL EN TELEFOONNUMMER
-        echo "<div class='emailVerzorger'>E-mail Verzorger: ". $item['Email_Verzorger']."</div>";
-        echo "<div class='telVerzorger'>Telefoonnummer Verzorger: ". $item['Tel_Verzorger']."</div>";
+        echo "<div class='emailVerzorger'>E-mail Verzorger: ". $item['Email_Verzorger'] . "</div>";
+        echo "<div class='telVerzorger'>Telefoonnummer Verzorger: " . $item['Tel_Verzorger'] . "</div>";
         
         echo "</div><br>";
-        echo "<a href='studentAanpas?id=".$item['leerlingnummer']."'>Gegevens aanpassen</a>";
+        echo "<a href='studentAanpas?id=" . $item['leerlingnummer'] . "'>Gegevens aanpassen</a>";
     }
     //sluit de tabel af
     echo "</div>";
@@ -123,13 +123,12 @@ if(mysqli_num_rows($result3) > 0){
     while($item = mysqli_fetch_assoc($result3)){
     echo "<tr>";
 
-    echo "<td>" .$item['beschrijving_beoordeling']."</td>";
-    echo "<td>" .$item['sleutelwoord_beoordeling']."</td>";
+    echo "<td>" . $item['beschrijving_beoordeling'] . "</td>";
+    echo "<td>" . $item['sleutelwoord_beoordeling'] . "</td>";
 
-    echo "<td>" .date('d-m-Y',strtotime($item['datum_beoordeling']))."</td>";
-    echo "<td><a href='../beoordeel/toDB/aanpasBeoordeling.php?id=".$item['ID']."&studentID=$id'>Aanpassen</a></td>";
+    echo "<td>" . date('d-m-Y',strtotime($item['datum_beoordeling'])) . "</td>";
 
-    echo "<td><a href='../beoordeel/toDB/verwijderVraag.php?id=".$item['ID']."&studentID=$id'>Verwijderen</a></td></tr>";  
+    echo "<td><a href='../beoordeel/toDB/verwijderVraag.php?id=" . $item['ID'] . "&studentID=$id'>Verwijderen</a></td></tr>";  
 }
     echo "</table><br><br>";
 }
@@ -145,13 +144,13 @@ if(mysqli_num_rows($result4) > 0){
     while($item = mysqli_fetch_assoc($result4)){
     echo "<tr>";
 
-    echo "<td>" .$item['beschrijving_beoordeling']."</td>";
-    echo "<td>" .$item['sleutelwoord_beoordeling']."</td>";
+    echo "<td>" . $item['beschrijving_beoordeling'] . "</td>";
+    echo "<td>" . $item['sleutelwoord_beoordeling'] . "</td>";
 
-    echo "<td>" .date('d-m-Y',strtotime($item['datum_beoordeling']))."</td>";
+    echo "<td>" . date('d-m-Y',strtotime($item['datum_beoordeling'])) . "</td>";
 
-    //LINK NAAR verwijderBeoordeling.php PAGINA
-    echo "<td><a href='../beoordeel/toDB/verwijderVraag.php?id=".$item['ID']."&studentID=$id'>Verwijderen</a></td></tr>";
+    //LINK NAAR verwijderBeoordeling.php PAGINA met twee parameters (ID van beoordeling en studentID)
+    echo "<td><a href='../beoordeel/toDB/verwijderVraag.php?id=" . $item['ID'] . "&studentID=$id'>Verwijderen</a></td></tr>";
     }
     echo "</table>";
 }
