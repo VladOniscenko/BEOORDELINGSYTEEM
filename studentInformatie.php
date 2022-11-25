@@ -1,7 +1,13 @@
 <!-- Hier komt een pagina waar je gegevens/beoordelingen kunt inzien van een student. -->
 <?php
-require_once './toDB/session.inc.php';
+    //sessie -->
+    require_once './toDB/session.inc.php';
+
+    //error reporting
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

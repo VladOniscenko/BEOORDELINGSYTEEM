@@ -1,8 +1,12 @@
 <?php
-require_once './toDB/session.inc.php';
-// ini_set('display_errors', 1);
-// error_reporting(E_ALL);
+    //sessie -->
+    require_once './toDB/session.inc.php';
+
+    //error reporting
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

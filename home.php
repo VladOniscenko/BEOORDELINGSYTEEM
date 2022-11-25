@@ -1,6 +1,11 @@
 <!-- Hier komt een overzicht van groep. -->
 <?php
+    //sessie -->
     require_once './toDB/session.inc.php';
+
+    //error reporting
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE html>

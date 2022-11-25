@@ -1,4 +1,12 @@
 <!-- Hier komt een pagina waar je een beoordeling kunt geven aan een student. -->
+<?php
+    //sessie -->
+    require_once './toDB/session.inc.php';
+
+    //error reporting
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
