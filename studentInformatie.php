@@ -16,7 +16,6 @@ require_once './toDB/session.inc.php';
     require './toDB/config.php';
       $id = $_GET['id'];
       $klas = $_SESSION['klas'];
-
 //Maak de query
 $query = "SELECT * FROM tabel_leerlingen WHERE klas = '$klas' AND leerlingnummer = $id";
 $query2 = "SELECT * FROM tabel_groepen WHERE ID = $klas";
@@ -75,8 +74,8 @@ if(mysqli_num_rows($result) > 0){
         echo "<div class='geboortedatum'>Geboortedatum " . date("d-m-Y",strtotime($item['geboortedatum'])) . "</div>";
         echo "<div class='groepsnaam'>Groepsnaam: $groepsnaam</div>";
 
-        echo "<div style='color: green;' class='pluspunten'>Aantal pluspunten: " . $item['pluspunten_leerling']."</div>";
-        echo "<div style='color: red;' class='pluspunten'>Aantal minpunten: " . $item['pluspunten_leerling']."</div><br>";
+        echo "<div style='color: green;' class='pluspunten'>Aantal pluspunten: " .$item['pluspunten_leerling']. "</div>";
+        echo "<div style='color: red;' class='pluspunten'>Aantal minpunten: " . $item['minpunten_leerling']. "</div><br>";
 
         echo "<h3>Gegevens van de verzorger</h3>";
         echo "<div class='naamVerzorger'>Naam Verzorger: ". $item['Naam_Verzorger']."</div>";
@@ -107,7 +106,8 @@ if(mysqli_num_rows($result3) > 0){
     echo "<td>" .$item['beschrijving_beoordeling']."</td>";
     echo "<td>" .$item['sleutelwoord_beoordeling']."</td>";
     echo "<td>" .date('d-m-Y',strtotime($item['datum_beoordeling']))."</td>";
-    echo "<td><a href='aanpasBeoordeling.php?id=".$item['ID']."'>Aanpassen</a></td></tr>";    
+    echo "<td><a href='../beoordeel/toDB/aanpasBeoordeling.php?id=".$item['ID']."&studentID=$id'>Aanpassen</a></td>";  
+    echo "<td><a href='../beoordeel/toDB/verwijderBeoordeling.php?id=".$item['ID']."&studentID=$id'>Verwijderen</a></td></tr>";  
 }
     echo "</table><br><br>";
 }
@@ -123,7 +123,8 @@ if(mysqli_num_rows($result4) > 0){
     echo "<td>" .$item['beschrijving_beoordeling']."</td>";
     echo "<td>" .$item['sleutelwoord_beoordeling']."</td>";
     echo "<td>" .date('d-m-Y',strtotime($item['datum_beoordeling']))."</td>";
-    echo "<td><a href='aanpasBeoordeling.php?id=".$item['ID']."'>Aanpassen</a></td></tr>";
+    echo "<td><a href='../beoordeel/toDB/aanpasBeoordeling.php?id=".$item['ID']."&studentID=$id'>Aanpassen</a></td>";
+    echo "<td><a href='../beoordeel/toDB/verwijderBeoordeling.php?id=".$item['ID']."&studentID=$id'>Verwijderen</a></td></tr>";
     }
     echo "</table>";
 }
