@@ -55,27 +55,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Bewerken</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./scripts/image-picker.scss">
 </head>
 <body>
     <a href="./studentInformatie.php?id=<?php echo $id ?>">terug</a>
+    
+    <div>afbeelding select</div>
+    
     <form action="./toDB/aanpasVerwerk.php" method="post">
         
         <div id="contentFormPasAan">
             <input type="hidden" value="<?php echo $leerlingnummer?>" name="leerlingnummer">
 
-            <input type="text" name="voornaam" value="<?php echo $voornaam ?>">
-            <input type="text" name="achternaam" value="<?php echo $achternaam ?>">
-            <input type="date" name="geboortedatum" value="<?php echo $geboortedatum ?>">
+            <div>
+                <label for="voornaam">Voornaam leerling:</label>
+                <input type="text" name="voornaam" value="<?php echo $voornaam ?>">
+            </div>
 
-            <input type="text" name="Naam_Verzorger" value="<?php echo $Naam_Verzorger ?>">
-            <input type="email" name="Email_Verzorger" value="<?php echo $Email_Verzorger ?>">
-            <input type="number" name="Tel_Verzorger" value="<?php echo $Tel_Verzorger ?>">
+            <div>
+                <label for="voornaam">Achternaam leerling:</label>
+                <input type="text" name="achternaam" value="<?php echo $achternaam ?>">
+            </div>
 
-            
+            <div>
+                <label for="voornaam">Geboortedatum leerling:</label>
+                <input type="date" name="geboortedatum" value="<?php echo $geboortedatum ?>">
+            </div>
+
+            <div>
+                <label for="voornaam">Naam ouder verzorger:</label>
+                <input type="text" name="Naam_Verzorger" value="<?php echo $Naam_Verzorger ?>">
+            </div>
+
+            <div>
+                <label for="voornaam">E-mail ouder verzorger:</label>
+                <input type="email" name="Email_Verzorger" value="<?php echo $Email_Verzorger ?>">
+            </div>
+
+            <div>
+                <label for="voornaam">Telefoonnummer ouder verzorger:</label>
+                <input type="number" name="Tel_Verzorger" value="<?php echo $Tel_Verzorger ?>">
+            </div>
+                
         </div>
         
         <input type="submit" value="verzenden">
     </form>
     <button><a href="./toDB/uitKlas.php?id=<?php echo $id ?>">Leerling verwijderen uit de klas</a></button>
+    
 </body>
 </html>
