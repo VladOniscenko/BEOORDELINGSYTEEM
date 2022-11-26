@@ -1,4 +1,5 @@
 <?php
+require_once 'session.inc.php';
 require 'config.php';
 
 if(isset($_GET['id'])&&isset($_GET['studentID'])){
