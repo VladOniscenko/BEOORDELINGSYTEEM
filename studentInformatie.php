@@ -92,6 +92,7 @@
                     <div class='student'>
                         <img class='avatar' src='./avatars/$avatar'>
                         <div><a href='./studentAanpas.php?id=$leerlingnummer'>Gegevens aanpassen</a></div>
+                        <div><a href='./studentBeoordeling.php?id=$leerlingnummer'>Beoordeling toevoegen</a></div>
 
                         <div class='leerlingnummer'>Leerlingnummer: $leerlingnummer</div>
                         

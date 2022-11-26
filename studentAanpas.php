@@ -58,18 +58,24 @@
 </head>
 <body>
     <a href="./studentInformatie.php?id=<?php echo $id ?>">terug</a>
-    <div id="contentFormPasAan">
-        <input type="text" value="<?php echo $voornaam ?>" name="voornaam">
-        <input type="text" value="<?php echo $achternaam ?>" name="achternaam">
-        <input type="date" value="<?php echo $geboortedatum ?>" name="geboortedatum">
+    <form action="./toDB/aanpasVerwerk.php" method="post">
+        
+        <div id="contentFormPasAan">
+            <input type="hidden" value="<?php echo $leerlingnummer?>" name="leerlingnummer">
 
-        <input type="text" value="<?php echo $Naam_Verzorger ?>" name="Naam_Verzorger">
-        <input type="email" value="<?php echo $Email_Verzorger ?>" name="Email_Verzorger">
-        <input type="number" value="<?php echo $Tel_Verzorger ?>" name="Tel_Verzorger">
+            <input type="text" name="voornaam" value="<?php echo $voornaam ?>">
+            <input type="text" name="achternaam" value="<?php echo $achternaam ?>">
+            <input type="date" name="geboortedatum" value="<?php echo $geboortedatum ?>">
 
+            <input type="text" name="Naam_Verzorger" value="<?php echo $Naam_Verzorger ?>">
+            <input type="email" name="Email_Verzorger" value="<?php echo $Email_Verzorger ?>">
+            <input type="number" name="Tel_Verzorger" value="<?php echo $Tel_Verzorger ?>">
+
+            
+        </div>
+        
         <input type="submit" value="verzenden">
-    </div>
-    
+    </form>
     <button><a href="./toDB/uitKlas.php?id=<?php echo $id ?>">Leerling verwijderen uit de klas</a></button>
 </body>
 </html>

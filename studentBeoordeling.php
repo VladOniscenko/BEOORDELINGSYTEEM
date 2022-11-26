@@ -6,6 +6,7 @@
     //error reporting
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
+    $id = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
     <title>Beoordeling</title>
 </head>
 <body>
-    <a href="./home.php">terug naar info leerling</a>
+    <a href="./studentInformatie.php?id=<?php echo $id?>">terug</a>
     <form action="">
         <!-- id = null -->
 
@@ -56,3 +57,9 @@
     </form>
 </body>
 </html>
+
+<!-- UPDATE `tabel_leerlingen` SET `minpunten_leerling` = `minpunten_leerling` - 1 WHERE `leerlingnummer` = 1;
+UPDATE `tabel_leerlingen` SET `minpunten_leerling` = `minpunten_leerling` + 1 WHERE `leerlingnummer` = 1;
+
+UPDATE `tabel_leerlingen` SET `minpunten_leerling` = `pluspunten_leerling` - 1 WHERE `leerlingnummer` = 1;
+UPDATE `tabel_leerlingen` SET `minpunten_leerling` = `pluspunten_leerling` + 1 WHERE `leerlingnummer` = 1; -->
