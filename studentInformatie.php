@@ -151,7 +151,7 @@
                         <td>$beschBe</td>
                         <td>$sleutelBe</td>
                         <td>$datumBe</td>
-                        <td><a href='./toDB/beoordelingAanpas.php.php?id=$IDBe&studentID=$id'>Aanpassen</a></td>
+                        <td><a href='./toDB/beoordelingAanpas.php?id=$IDBe&studentID=$id'>Aanpassen</a></td>
                         <td><a href='./toDB/verwijderVraag.php?id=$IDBe&studentID=$id'>Verwijderen</a></td>
                     </tr>
                 ";  
@@ -194,7 +194,7 @@
                         <td>$NbeschBe</td>
                         <td>$NsleutelBe</td>
                         <td>$NdatumBe</td>
-                        <td><a href='./toDB/beoordelingAanpas.php.php?id=$NIDBe&studentID=$id'>Aanpassen</a></td>
+                        <td><a href='./toDB/beoordelingAanpas.php?id=$NIDBe&studentID=$id'>Aanpassen</a></td>
                         <td><a href='./toDB/verwijderVraag.php?id=$NIDBe&studentID=$id'>Verwijderen</a></td>
                     </tr>
                 ";  
