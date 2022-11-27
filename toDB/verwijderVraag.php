@@ -21,6 +21,7 @@ if(isset($_GET['id'])&&isset($_GET['studentID'])){
         echo "<h3>U heeft de volgende beoordeling gekozen:</h3>";
         echo "<table border='1px'><tr><th>Beschrijving beoordeling</th><th>Type beoordeling</th><th>Datum beoordeling</th></tr>";
         while($item = mysqli_fetch_assoc($result)){
+            $sleutel = $item['sleutelwoord_beoordeling'];
         echo "<tr>";
     
         echo "<td>" .$item['beschrijving_beoordeling']."</td>";
@@ -31,7 +32,7 @@ if(isset($_GET['id'])&&isset($_GET['studentID'])){
         echo "</table><br><br>";
         echo "<strong>Wilt u beoordeling echt verwijderen?</strong> <br><br>";
         
-        echo "<a href='verwijderBeoordeling.php?id=$id&studentID=$studentID'>JA</a>";
+        echo "<a href='verwijderBeoordeling.php?id=$id&studentID=$studentID&sleutel=$sleutel'>JA</a>";
         echo " --- ";
         
         echo "<a href='../studentInformatie.php?id=$studentID'>Nee</a>";
