@@ -16,6 +16,7 @@
     <title>Student toevoegen - het Glrtje</title>
 </head>
 <body>
+    <a href='./home.php'>Terug naar overzicht</a>
     <?php
         require './toDB/config.php';
 
@@ -49,9 +50,8 @@
         else
         {
             echo "<p>Geen student zonder klas gevonden in het systeem!</p>";
-            echo "<a href='home.php'>Terug naar overzicht</a>";
-            echo $klas ."<br>";
-            echo $id . "<br>";
+            //echo $klas ."<br>";
+            //echo $id . "<br>";
         }
     ?>
 </body>
