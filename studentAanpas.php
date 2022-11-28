@@ -53,7 +53,8 @@
 <body>
     <a href="./studentInformatie.php?id=<?php echo $id ?>">terug</a>
     
-    <div>afbeelding select</div>
+    <div><img src="./avatars/<?php echo $avatar ?>" alt=""></div>
+    <div><a href="./toDB/avatarAanpas.php?id=<?php echo $leerlingnummer?>"><button>Avatar aanpassen</button></a></div>
     
     <form action="./toDB/aanpasVerwerk.php" method="post">
         

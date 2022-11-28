@@ -69,27 +69,7 @@ if (mysqli_num_rows($result) > 0)
         }
     }
 }
-
-$aantalPositief = $huiswerkGemaakt + $maaltijdOpgegeten + $speelgoedOpgeruimd + $goedGedragen + $ietsAndersP;
-$aantalNegatief = $huiswerkNietGemaakt + $maaltijdNietOpgegeten + $speelgoedNietOpgeruimd + $goedNietGedragen + $ietsAndersN;
-$aantalBeoordelingen = $aantalPositief + $aantalNegatief;
-
-if($aantalBeoordelingen <=0){
-    $gemPerBeordeling = 0;
-}else{
-    $gemPerBeordeling = 100 / $aantalBeoordelingen;
-}
-
-$gemPositief = $gemPerBeordeling * $aantalPositief;
-$totaal = number_format((double)$gemPositief, 1, '.', '');
-if ($totaal >= 50)
-{
-    $fontTotaal = 'rgb(153, 230, 30)';
-}
-else
-{
-    $fontTotaal = 'rgb(230, 46, 46)';
-} ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
