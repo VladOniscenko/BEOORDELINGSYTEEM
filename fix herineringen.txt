@@ -1,9 +1,0 @@
-geboorte check en in verwerk  // VLAD
-
-wachtwoord pattern en chech in verwerk  // VLAD
-
-email check verwerk voor pattern // VLAD
-
-avatar aanpas // VLAD
-
-beoordeling aanpas // VLAD
