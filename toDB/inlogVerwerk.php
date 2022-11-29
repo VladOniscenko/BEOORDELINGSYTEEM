@@ -17,8 +17,6 @@
             $query = "SELECT * FROM inlog_docent WHERE `gebruikersnaam` = '$username' AND `wachtwoord` = '$password'";
             $result = mysqli_query($mysqli, $query);
 
-            echo $query;
-
             if(mysqli_num_rows($result) == 1){
                 $item = mysqli_fetch_assoc($result);
                 $klas = $item['klas'];

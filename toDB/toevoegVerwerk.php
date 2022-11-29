@@ -1,29 +1,26 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-require_once 'session.inc.php';
-require 'config.php';
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL);
+  require_once 'session.inc.php';
+  require 'config.php';
 
-
-
-$klas= $_SESSION['klas'];
-
-if(isset($_POST['submit'])){
+  if(isset($_POST['submit'])){
+    $klas= $_SESSION['klas'];
     $student_ID = $_POST['vrijeStudent'];
 
     $query = "UPDATE tabel_leerlingen SET klas = $klas WHERE leerlingnummer = $student_ID";
     //Voer de query uit en vang het 'resultaat' op
-//LET OP: het resultaat geeft aan of het wel of niet is gelukt ('true'/'false')
-$result = mysqli_query($mysqli,$query);
+    //LET OP: het resultaat geeft aan of het wel of niet is gelukt ('true'/'false')
+    $result = mysqli_query($mysqli,$query);
 
-//Controleer of het is gelukt
-if($result){
-  header("location:../home.php");
-}
-else{
-    echo "FOUT bij toevoegen<br/>";
-    echo $query . "<br/>"; // de query tonen
-    echo mysqli_error($mysqli); //de foutmelding tonen
-}
-}
+    //Controleer of het is gelukt
+    if($result){
+      header("location:../home.php");
+    }
+    else{
+        echo "FOUT bij toevoegen<br/>";
+        echo $query . "<br/>"; // de query tonen
+        echo mysqli_error($mysqli); //de foutmelding tonen
+    }
+  }
 ?>

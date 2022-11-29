@@ -1,6 +1,16 @@
 <!-- Hier komt een overzicht van groep. -->
 <?php
+    //sessie -->
     require_once './toDB/session.inc.php';
+
+    //error reporting
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+
+    $klas = $_SESSION['klas'];
+    require './toDB/config.php';
+    $query = "SELECT * FROM tabel_leerlingen WHERE klas = '$klas'";
+    $result = mysqli_query($mysqli,$query);
 ?>
 
 <!DOCTYPE html>
@@ -27,18 +37,6 @@
     <!-- MAIN -->
     <main>
         <?php
-            $klas = $_SESSION['klas'];
-            require './toDB/config.php';
-            $query = "SELECT * FROM tabel_leerlingen WHERE klas = '$klas'";
-            $result = mysqli_query($mysqli,$query);
-
-            if(!$result){
-                echo "<p>FOUT:</p>";
-                echo "<p>" . $query . "</p>";
-                echo "<p>" . mysqli_error($mysqli) . "</p>";
-                exit;
-            }
-
             if(mysqli_num_rows($result) > 0){
                 // DIT IS WAT OP PAGINA KOMT
                 echo "<div class='studentContainer'>";

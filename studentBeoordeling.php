@@ -1,4 +1,17 @@
 <!-- Hier komt een pagina waar je een beoordeling kunt geven aan een student. -->
+<?php
+    //sessie -->
+    require_once './toDB/session.inc.php';
+
+    //error reporting
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+    }
+    
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,42 +22,48 @@
     <title>Beoordeling</title>
 </head>
 <body>
-    <a href="./home.php">terug naar info leerling</a>
-    <form action="">
+    <a href="./studentInformatie.php?id=<?php echo $id?>">terug</a>
+    <form action="./toDB/beoordelingVerwerk.php" method="post">
         <!-- id = null -->
 
         <!-- IDLeerling -->
-        <input type="hidden" value="3" name="IDLeerling" id="IDLeerling">
-
-        <!-- klas -->
-        <input type="hidden" value="1" name="klas" id="klas">
+        <input type="hidden" value="<?php echo $id ?>" name="IDLeerling" id="IDLeerling">
 
         <!-- sleutelwoord // Onderwerp -->
-        <select name="sleutelwoord" id="sleutelwoord">
-            <option value="huiswerk">Huiswerk gemaakt</option>
-            <option value="ontbijt">Maaltijd opgegeten</option>
-            <option value="speeltijd">Speelgoed opgeruimd</option>
-            <option value="gedrag">Goed gedragen</option>
-            <option value="iets anders.">Iets anders positief</option>
+        <div>
+            <select name="sleutelwoord" id="sleutelwoord" required>
+                <optgroup label="Positieve beoordelingen">
+                    <option value="Huiswerk gemaakt">Huiswerk gemaakt</option>
+                    <option value="Maaltijd opgegeten">Maaltijd opgegeten</option>
+                    <option value="Speelgoed opgeruimd">Speelgoed opgeruimd</option>
+                    <option value="Goed gedragen">Goed gedragen</option>
+                    <option value="Iets anders positief">Iets anders positief</option>
+                </optgroup>
 
-            <option value="huiswerk">Huiswerk niet gemaakt</option>
-            <option value="ontbijt">Maaltijd niet opgegeten</option>
-            <option value="speeltijd">Speelgoed niet opgeruimd</option>
-            <option value="gedrag">Niet goed gedragen</option>
-            <option value="iets anders.">Iets anders negatief</option>
-        </select>
-
-        <!-- soort beoordeling -->
-        <select name="beoordeling" id="beoordeling">
-            <option value="positief">Positief</option>
-            <option value="negatief">Negatief</option>
-        </select>
-
+                <optgroup label="Negatieve beoordelingen">
+                    <option value="Huiswerk niet gemaakt">Huiswerk niet gemaakt</option>
+                    <option value="Maaltijd niet opgegeten">Maaltijd niet opgegeten</option>
+                    <option value="Speelgoed niet opgeruimd">Speelgoed niet opgeruimd</option>
+                    <option value="Niet goed gedragen">Niet goed gedragen</option>
+                    <option value="Iets anders negatief">Iets anders negatief</option>
+                </optgroup>
+            </select>
+        </div>
         <!-- beschrijving -->
-        <textarea name="beschrijving" id="beschrijving" cols="30" rows="10" maxlength="300"></textarea>
+        <div>
+            <textarea name="beschrijving" id="beschrijving" cols="30" rows="10" maxlength="300" required></textarea>
+        </div>
 
-        
+        <!-- DATUM -->
+        <input type="hidden" name="datum" value="<?php echo date('Y-m-d'); ?>">
+
         <input type="submit" value="Verzenden">
     </form>
 </body>
 </html>
+
+<!-- UPDATE `tabel_leerlingen` SET `minpunten_leerling` = `minpunten_leerling` - 1 WHERE `leerlingnummer` = 1;
+UPDATE `tabel_leerlingen` SET `minpunten_leerling` = `minpunten_leerling` + 1 WHERE `leerlingnummer` = 1;
+
+UPDATE `tabel_leerlingen` SET `minpunten_leerling` = `pluspunten_leerling` - 1 WHERE `leerlingnummer` = 1;
+UPDATE `tabel_leerlingen` SET `minpunten_leerling` = `pluspunten_leerling` + 1 WHERE `leerlingnummer` = 1; -->

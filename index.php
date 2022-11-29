@@ -1,6 +1,5 @@
 <!-- Hier komt een inlog form. -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 
