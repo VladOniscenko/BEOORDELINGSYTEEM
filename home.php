@@ -16,11 +16,11 @@
     <!-- HEADER -->
     <header>
         <h1>Klasoverzicht</h1>
+        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
         <div>
-            <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
+
             <a href="./voortgang.php">Voortgang</a>
             <a href="./home.php">Klas</a>
-            <a class="toevoegen" href="./studentToevoeg.php">Voeg een nieuw student toe</a>
         </div>        
     </header>
 
@@ -43,10 +43,12 @@
                 // DIT IS WAT OP PAGINA KOMT
                 echo "<div class='studentContainer'>";
                 while($item = mysqli_fetch_assoc($result)){
-                    echo "<div class='student'>";
+                    echo "<div class='card'>";
                     echo "<img class='avatar' src='./avatars/" . $item['avatar_leerling'] . "' width='100%'>";
+                    echo "<div>";
                     echo "<div class='naam'>" . $item['voornaam']." "."</div>";
                     echo "<div class='achternaam'>". $item['achternaam']."</div>";
+                    echo "</div>";
                     echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Info</a>";
                     echo "</div>";
                 }
@@ -57,6 +59,7 @@
                 echo "<p>U heeft nog geen leerlingen toegevoegd aan uw klas!</p>";
             }
         ?>
+        <a class="buttonRound" href="./studentToevoeg.php">+</a>
     </main>
 
     <!-- FOOTER -->

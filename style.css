@@ -6,6 +6,8 @@
     --clr-main: #8FE507;
     --clr-dark-accent: #956E38;
     --clr-dark-shade: #2C2D35;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html, 
@@ -37,6 +39,24 @@ a{
     display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
+  }
+
+  .buttonRound{
+    width: 60px;
+    height: 60px;
+    background-color: var(--clr-main);
+    color: var(--clr-light-shade);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
   }
 
   .twoButtonContainer{
@@ -117,18 +137,24 @@ header > div{
 }
 
 .studentContainer{
-    display: flex;
-    flex-wrap: wrap;
-    margin:4%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    margin: 4%;
+    grid-gap: 1rem;
 }
 
-.studentContainer > div{
+.card{
     min-width: 170px;
     width: 170px;
-    display: inline-block;
-    margin: 1%;
-    border: 1px solid black;
+    display: grid;
+    margin: auto;
+    /*! border: 1px solid black; */
+    background-color: var(--clr-light-shade2);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: gray 0px 0px 4px;
 }
+
 h1{
     text-align: center;
 }
