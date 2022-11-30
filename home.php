@@ -31,7 +31,7 @@
 
     <!-- MAIN -->
     <main>
-        <div class="container">
+        <div class="twoItemContainer">
             <div class="groupContainer">
                 <img src='http://placekitten.com/50/50' alt='placeholder'>
                 <div>Groep</div>
@@ -52,7 +52,10 @@
                     echo "<div class='naam'>" . $item['voornaam']." "."</div>";
                     echo "<div class='achternaam'>". $item['achternaam']."</div>";
                     echo "</div>";
+                    echo "<div class='twoButtonContainer'>";
                     echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Info</a>";
+                    echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Pas aan</a>";
+                    echo "</div>";
                     echo "</div>";
                 }
                 echo "</div>";

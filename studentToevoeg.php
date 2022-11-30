@@ -17,12 +17,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <!-- HEADER -->
-        <header>
+    <!-- HEADER -->
+    <header>
         <img src="./media/logo.png" alt="logo">
-        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>       
+        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
     </header>
     <a href='./home.php'>Terug naar overzicht</a>
+    
     <?php
         require './toDB/config.php';
 

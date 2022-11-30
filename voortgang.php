@@ -88,7 +88,7 @@ if (mysqli_num_rows($result) > 0)
         <img src="./media/logo.png" alt="logo">
         <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>       
     </header>
-    <div class="container">
+    <div class="twoItemContainer">
             <div class="groupContainer">
                 <img src='http://placekitten.com/50/50' alt='placeholder'>
                 <div>Groep</div>

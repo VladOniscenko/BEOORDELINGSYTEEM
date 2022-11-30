@@ -60,11 +60,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studentinformatie - het GLRtje</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+<header>
+        <img src="./media/logo.png" alt="logo">
+        <a href="./home.php">Terug</a>   
+    </header>
 
-   <a href="./home.php">Terug</a>
     
     <div class='container'>
 
@@ -127,6 +130,7 @@
 
     <!-- TABELLEN POSITIEVE BE -->
     <?php
+        echo "<div>";
         if(mysqli_num_rows($result3) > 0){
             //TONEN VAN POSITIEVE BEOORDELINGEN IN DE TABEL
             echo "
@@ -205,6 +209,7 @@
         else{
             echo "<div>Er is geen negatieve beoordeling gevonden in het systeem. </div>";
         }
+        echo "</div>";
     ?>
 </body>
 </html>

@@ -7,7 +7,7 @@
     --clr-dark-accent: #956E38;
     --clr-dark-shade: #2C2D35;
 
-    font-family: glrfont;
+    font-family: arial, sans-serif;
 }
 
 @font-face {
@@ -23,6 +23,32 @@ body {
 
 body{
     background-color: var(--clr-light-shade);
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0;
+  box-shadow: gray 0px 0px 1px
+}
+div > h3:not(:first-child){
+    margin-top: 10%;
+}
+td, th {
+  border: none;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:first-child{
+    background-color: var(--clr-main);
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 
 a{
@@ -71,6 +97,8 @@ a{
     width: 90%;
     margin-top: auto;
     margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .twoButtonContainer > a{
@@ -128,18 +156,19 @@ a{
 
 header{
     background-color: white;
-    color: var(--clr-light-shade);
+    color: var(--clr-dark-shade);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+    box-shadow: gray 0px 0px 4px;
 }
 
 header > img{
     max-height: 70px;
 }
 
-.container{
+.twoItemContainer{
     display: flex;
     justify-content: space-between;
     margin: 10px
@@ -161,15 +190,20 @@ header > img{
 }
 
 .card{
-    min-width: 170px;
-    width: 170px;
+    min-width: 200px;
+    width: 200px;
     display: grid;
     margin: auto;
+    text-align: center;
     /*! border: 1px solid black; */
-    background-color: var(--clr-light-shade2);
+    background-color: whitesmoke;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: gray 0px 0px 4px;
+}
+
+.card > img{
+    margin-bottom: 10px
 }
 
 h1{
@@ -180,13 +214,27 @@ h1{
     margin-left: 4%;
 }
 
+.btn-group{
+    overflow: hidden;
+}
+
 .btn-group a {
-  background-color: #04AA6D; /* Green background */
-  border: 1px solid green; /* Green border */
+  background-color: var(--clr-main); /* Green background */
+  border: 1px solid var(--clr-dark-shade); /* Green border */
   color: white; /* White text */
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
+  width:50px;
+  text-align: center;
+}
+
+.btn-group a:first-child{
+    border-radius: 10px 0px 0px 10px;
+}
+
+.btn-group a:last-child{
+    border-radius: 0px 10px 10px 0px;
 }
 
 /* Clear floats (clearfix hack) */
@@ -203,4 +251,20 @@ h1{
 /* Add a background color on hover */
 .btn-group a:hover {
   background-color: #3e8e41;
+}
+
+@media only screen and (min-width:808px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+    }
+    
+    .container > div{
+        padding: 20px
+    }
+    
+    .container > div > table{
+        width: 100%;
+        /*! margin-bottom: 20%; */
+    }
 }
