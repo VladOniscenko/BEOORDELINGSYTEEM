@@ -105,8 +105,8 @@
                         <div class='geboortedatum'>Geboortedatum $gebDatum</div>
                         <div class='groepsnaam'>Groepsnaam: $groepsnaam</div>
 
-                        <div class='pluspunten'>Aantal pluspunten: $plusP</div>
-                        <div class='pluspunten'>Aantal minpunten: $minP</div>
+                        <div class='pluspunten'>Positieve beoordelingen: $plusP</div>
+                        <div class='pluspunten'>Negatieve beoordelingen: $minP</div>
 
                         <h3>Gegevens van de verzorger</h3>
 
