@@ -5,7 +5,7 @@
     if(isset($_GET['id'])){
         $id = $_GET['id'];
 
-        $query = "UPDATE `tabel_leerlingen` SET `klas`= NULL WHERE `leerlingnummer` = $id";
+        $query = "UPDATE `tabel_leerlingen` SET `klas`= 0 WHERE `leerlingnummer` = $id";
         $result = mysqli_query($mysqli,$query);
 
         if($result){
