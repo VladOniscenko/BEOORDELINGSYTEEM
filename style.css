@@ -7,8 +7,13 @@
     --clr-dark-accent: #956E38;
     --clr-dark-shade: #2C2D35;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: glrfont;
 }
+
+@font-face {
+    font-family: glrfont;
+    src: url(fonts/glrfont.otf);
+  }
 
 html, 
 body {
@@ -122,18 +127,30 @@ a{
 /*HOME*/
 
 header{
-    background-color: var(--clr-dark-shade);
+    background-color: white;
     color: var(--clr-light-shade);
-}
-
-header > h1{
-    margin: 0px;
-}
-
-header > div{
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    padding: 20px;
+}
+
+header > img{
+    max-height: 70px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px
+}
+.groupContainer {
+    display: flex;
+    background-image: red;
+}
+
+.groupContainer > div{
+    margin: auto 0 auto 10px;
 }
 
 .studentContainer{
@@ -161,4 +178,29 @@ h1{
 
 .toevoegen{
     margin-left: 4%;
+}
+
+.btn-group a {
+  background-color: #04AA6D; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group a:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group a:hover {
+  background-color: #3e8e41;
 }

@@ -25,17 +25,22 @@
 <body>
     <!-- HEADER -->
     <header>
-        <h1>Klasoverzicht</h1>
-        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
-        <div>
-
-            <a href="./voortgang.php">Voortgang</a>
-            <a href="./home.php">Klas</a>
-        </div>        
+        <img src="./media/logo.png" alt="logo">
+        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>       
     </header>
 
     <!-- MAIN -->
     <main>
+        <div class="container">
+            <div class="groupContainer">
+                <img src='http://placekitten.com/50/50' alt='placeholder'>
+                <div>Groep</div>
+            </div>
+            <div class="btn-group">
+                <a href="./home.php">Klas</a>
+                <a href="./voortgang.php">Voortgang</a>
+            </div>
+        </div>
         <?php
             if(mysqli_num_rows($result) > 0){
                 // DIT IS WAT OP PAGINA KOMT
