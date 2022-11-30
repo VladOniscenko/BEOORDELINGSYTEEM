@@ -14,8 +14,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student toevoegen - het Glrtje</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+        <!-- HEADER -->
+        <header>
+        <img src="./media/logo.png" alt="logo">
+        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>       
+    </header>
     <a href='./home.php'>Terug naar overzicht</a>
     <?php
         require './toDB/config.php';

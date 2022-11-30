@@ -83,16 +83,24 @@ if (mysqli_num_rows($result) > 0)
     <script type="text/javascript" defer src="./scripts/chart.js"></script>
 </head>
 <body>
+        <!-- HEADER -->
+        <header>
+        <img src="./media/logo.png" alt="logo">
+        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>       
+    </header>
+    <div class="container">
+            <div class="groupContainer">
+                <img src='http://placekitten.com/50/50' alt='placeholder'>
+                <div>Groep</div>
+            </div>
+            <div class="btn-group">
+                <a href="./home.php">Klas</a>
+                <a href="./voortgang.php">Voortgang</a>
+            </div>
+        </div>
     <input id="mijnData" type="hidden" value="<?php echo "[$huiswerkGemaakt, $maaltijdOpgegeten, $speelgoedOpgeruimd, $goedGedragen, $ietsAndersP, $huiswerkNietGemaakt, $maaltijdNietOpgegeten, $speelgoedNietOpgeruimd, $goedNietGedragen, $ietsAndersN]"; ?>">
     <input type="hidden" id="totaal" value="<?php echo $totaal ?>">
-    
-    <!-- HEADER -->
-    <header>
-        <h1>Voortgang</h1>
-        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>
-        <a href="./voortgang.php">Voortgang</a>
-        <a href="./home.php">Klas</a>
-    </header>
+
 
     <!-- MAIN -->
     <main>
