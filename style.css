@@ -4,6 +4,7 @@
     --clr-light-shade2: #eae8e9;
     --clr-light-accent: #84AAA4;
     --clr-main: #8FE507;
+    --clr-main-darker: #3e8e41;
     --clr-dark-accent: #956E38;
     --clr-dark-shade: #2C2D35;
 
@@ -15,10 +16,15 @@
     src: url(fonts/glrfont.otf);
   }
 
+  @font-face{
+    font-family: GoogleSans;
+    src: url(fonts/GoogleSans-Regular.ttf);
+  }
 html, 
 body {
     height: 100%;
     margin: 0;
+    font-family: GoogleSans;
 }
 
 body{
@@ -56,7 +62,7 @@ a{
 }
 
 .mb90px{
-    margin-bottom: 90px!important;
+    margin-bottom: 170px !important;
 }
 
 .button {
@@ -70,7 +76,13 @@ a{
     display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
+    font-size: large;
+    transition: background-color 0.5s;
   }
+
+.button:hover{
+    background-color: var(--clr-main-darker);
+}
 
   .buttonRound{
     width: 60px;
@@ -225,8 +237,9 @@ h1{
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
-  width:50px;
+  min-width:100px;
   text-align: center;
+  transition: background-color 0.2s;
 }
 
 .btn-group a:first-child{
@@ -250,7 +263,7 @@ h1{
 
 /* Add a background color on hover */
 .btn-group a:hover {
-  background-color: #3e8e41;
+  background-color: var(--clr-main-darker);
 }
 
 @media only screen and (min-width:808px) {
