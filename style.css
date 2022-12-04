@@ -17,6 +17,16 @@ body {
     font-family: arial;
 }
 
+.material-symbols-outlined.logout{
+    color: var(--clr-dark-shade);
+    text-decoration: none;
+}
+
+.material-symbols-outlined.logout:hover{
+    color: var(--clr-main);
+    transition: color 2s
+}
+
 body{
     background-color: var(--clr-light-shade);
 }
