@@ -11,20 +11,10 @@
     font-family: arial, sans-serif;
 }
 
-@font-face {
-    font-family: glrfont;
-    src: url(fonts/glrfont.otf);
-  }
-
-  @font-face{
-    font-family: GoogleSans;
-    src: url(fonts/GoogleSans-Regular.ttf);
-  }
-html, 
 body {
     height: 100%;
     margin: 0;
-    font-family: GoogleSans;
+    font-family: arial;
 }
 
 body{
@@ -283,6 +273,15 @@ h1{
 /* Add a background color on hover */
 .btn-group a:hover {
   background-color: var(--clr-main-darker);
+}
+
+.student{
+    
+}
+
+.student img{
+    border-radius: 10px;
+    margin-bottom:20px
 }
 
 @media only screen and (min-width:808px) {
