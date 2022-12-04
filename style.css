@@ -11,6 +11,11 @@
     font-family: arial, sans-serif;
 }
 
+html,
+body{
+    height: 100%;
+}
+
 body {
     height: 100%;
     margin: 0;
@@ -63,6 +68,10 @@ a{
 
 .mb90px{
     margin-bottom: 170px !important;
+}
+
+.gc-span2{
+    grid-column: span 2;
 }
 
 .button {
@@ -298,6 +307,7 @@ h1{
     .container{
         display: grid;
         grid-template-columns: 1fr 5fr;
+        height: calc(100% - 110px);
     }
     
     .container > div{

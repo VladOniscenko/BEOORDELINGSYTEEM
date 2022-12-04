@@ -94,8 +94,7 @@
                 echo "
                     <div class='student'>
                         <img class='avatar' src='./avatars/$avatar'>
-                        <div><a href='./studentAanpas.php?id=$leerlingnummer'>Gegevens aanpassen</a></div>
-                        <div><a href='./studentBeoordeling.php?id=$leerlingnummer'>Beoordeling toevoegen</a></div>
+                        <h2>Gegevens van de student</h2>
 
                         <div class='leerlingnummer'>Leerlingnummer: $leerlingnummer</div>
                         
@@ -114,7 +113,6 @@
                         
                         <div class='emailVerzorger'>E-mail Verzorger: $emailuders</div>
                         <div class='telVerzorger'>Telefoonnummer Verzorger: $telOuders</div>
-                        
                     </div>
                 ";
             }
@@ -211,6 +209,10 @@
         }
         echo "</div>";
     ?>
+                            <div class='twoButtonContainer gc-span2'>
+                            <a href='./studentAanpas.php?id=$leerlingnummer' class='button'>Gegevens aanpassen</a>
+                            <a href='./studentBeoordeling.php?id=$leerlingnummer' class='button'>Beoordeling toevoegen</a>
+                        </div>
 </body>
 </html>
 
