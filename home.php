@@ -27,7 +27,7 @@
     <!-- HEADER -->
     <header>
         <img src="./media/logo.png" alt="logo">
-        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>       
+        <a href="./toDB/loguit.php?message=U bent uitgelogd!" class="material-symbols-outlined logout">Uitlogen</a>       
     </header>
 
     <!-- MAIN -->
