@@ -61,6 +61,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studentinformatie - het GLRtje</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
 <header>
@@ -208,11 +209,47 @@
             echo "<div>Er is geen negatieve beoordeling gevonden in het systeem. </div>";
         }
         echo "</div>";
+    echo "                            <div class='twoButtonContainer gc-span2'>
+    <a href='./studentAanpas.php?id=$leerlingnummer' class='button'>Gegevens aanpassen</a>
+    <button onclick='hideToevoegContainer(0)' class='button'>Beoordeling toevoegen</button>
+</div>";
     ?>
-                            <div class='twoButtonContainer gc-span2'>
-                            <a href='./studentAanpas.php?id=$leerlingnummer' class='button'>Gegevens aanpassen</a>
-                            <a href='./studentBeoordeling.php?id=$leerlingnummer' class='button'>Beoordeling toevoegen</a>
-                        </div>
+    <form action="./toDB/beoordelingVerwerk.php" method="post"  class="hiddenContainer">
+        <!-- id = null -->
+
+        <!-- IDLeerling -->
+        <input type="hidden" value="<?php echo $id ?>" name="IDLeerling" id="IDLeerling">
+
+        <!-- sleutelwoord // Onderwerp -->
+        <div>
+            <select name="sleutelwoord" id="sleutelwoord" required>
+                <optgroup label="Positieve beoordelingen">
+                    <option value="Huiswerk gemaakt">Huiswerk gemaakt</option>
+                    <option value="Maaltijd opgegeten">Maaltijd opgegeten</option>
+                    <option value="Speelgoed opgeruimd">Speelgoed opgeruimd</option>
+                    <option value="Goed gedragen">Goed gedragen</option>
+                    <option value="Iets anders positief">Iets anders positief</option>
+                </optgroup>
+
+                <optgroup label="Negatieve beoordelingen">
+                    <option value="Huiswerk niet gemaakt">Huiswerk niet gemaakt</option>
+                    <option value="Maaltijd niet opgegeten">Maaltijd niet opgegeten</option>
+                    <option value="Speelgoed niet opgeruimd">Speelgoed niet opgeruimd</option>
+                    <option value="Niet goed gedragen">Niet goed gedragen</option>
+                    <option value="Iets anders negatief">Iets anders negatief</option>
+                </optgroup>
+            </select>
+        </div>
+        <!-- beschrijving -->
+        <div>
+            <textarea name="beschrijving" id="beschrijving" cols="30" rows="10" maxlength="300" required></textarea>
+        </div>
+
+        <!-- DATUM -->
+        <input type="hidden" name="datum" value="<?php echo date('Y-m-d'); ?>">
+
+        <input type="submit" value="Verzenden">
+    </form>
 </body>
 </html>
 
