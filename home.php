@@ -82,6 +82,11 @@
             {
                 echo "<h1>U heeft nog geen leerlingen toegevoegd aan uw klas!</h1>";
             }
+
+            if(isset($_GET['message'])){
+                $message = $_GET['message'];
+                echo "<h1>$message</h1>";
+            }
         ?>
         <button class="buttonRound" href="./studentToevoeg.php" id="studentToevoegKnop"  onclick="hideToevoegContainer(0)">
             <span class="material-symbols-outlined">

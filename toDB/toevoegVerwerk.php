@@ -4,7 +4,7 @@
   require_once 'session.inc.php';
   require 'config.php';
 
-  if(isset($_POST['submit'])){
+  if(isset($_POST['vrijeStudent'])){
     $klas= $_SESSION['klas'];
     $student_ID = $_POST['vrijeStudent'];
 
@@ -25,5 +25,7 @@
         echo $query . "<br/>"; // de query tonen
         echo mysqli_error($mysqli); //de foutmelding tonen
     }
+  }else{
+    header("location:../home.php?message=Geen student gevonden!");
   }
 ?>
