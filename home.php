@@ -22,6 +22,7 @@
     <title>Klasoverzicht - GLRtje</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- HEADER -->
@@ -38,7 +39,7 @@
                 <div>Groep</div>
             </div>
             <div class="btn-group">
-                <a href="./home.php">Klas</a>
+                <a href="./home.php" class="selected">Klas</a>
                 <a href="./voortgang.php">Voortgang</a>
             </div>
         </div>
@@ -66,13 +67,51 @@
                 echo "<p>U heeft nog geen leerlingen toegevoegd aan uw klas!</p>";
             }
         ?>
-        <a class="buttonRound" href="./studentToevoeg.php">
+        <button class="buttonRound" href="./studentToevoeg.php" id="studentToevoegKnop"  onclick="hideToevoegContainer(0)">
             <span class="material-symbols-outlined">
                 add
             </span>
-        </a>
+        </button>
     </main>
+    <?php
+        require './toDB/config.php';
 
+        $query = "SELECT * FROM tabel_leerlingen WHERE klas = 0";
+        $result = mysqli_query($mysqli,$query);
+
+    echo "<div class='hiddenContainer'>";
+        if(!$result){
+            echo "<p>FOUT:</p>";
+            echo "<p>" . $query . "</p>";
+            echo "<p>" . mysqli_error($mysqli) . "</p>";
+            exit;
+        }
+
+            //Als er records zijn...
+        if(mysqli_num_rows($result) > 0){
+            //maak een select-item
+            echo "<p>Studenten zonder klas</p>";
+            echo "<form method='post' action='./toDB/toevoegVerwerk.php'>";
+            echo "<select class='vrijeStudenten' name='vrijeStudent'>";
+            echo "<option selected disabled>Kies een student</option>";
+            //zolang er items uit te lezen zijn...
+            while($item = mysqli_fetch_assoc($result)){
+                //toon de gegevens van het item in een tabelrij
+                echo "<option class='student' value='".$item['leerlingnummer']."'>".$item['voornaam']." ". $item['achternaam'] . " " . date('d-m-Y', strtotime($item['geboortedatum'])). "</option>";
+            }
+            echo "</select><br>";
+            echo "<input type='submit' class='submit' name='submit' value='Student toevoegen'/>";
+            echo "</form>";
+        }
+        //Als er geen records zijn...
+        else
+        {
+            echo "<p>Geen student zonder klas gevonden in het systeem!</p>";
+            //echo $klas ."<br>";
+            //echo $id . "<br>";
+        }
+    echo "</div>";
+    ?>
     <!-- FOOTER -->
     <footer>
 

@@ -22,6 +22,12 @@ body {
     font-family: arial;
 }
 
+select{
+  border: none;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+
 .material-symbols-outlined.logout{
     color: var(--clr-dark-shade);
     text-decoration: none;
@@ -246,6 +252,26 @@ header > img{
     color: gray;
 }
 
+.hiddenContainer{
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 0px;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+}
+.vrijeStudenten{
+    margin-bottom: 6px
+}
+.submit.button{
+    padding: 6px;
+}
+
+
+
 h1{
     text-align: center;
 }
@@ -268,6 +294,7 @@ h1{
   min-width:100px;
   text-align: center;
   transition: background-color 0.2s;
+  text-decoration: none;
 }
 
 .btn-group a:first-child{
@@ -276,6 +303,10 @@ h1{
 
 .btn-group a:last-child{
     border-radius: 0px 10px 10px 0px;
+}
+
+.btn-group .selected{
+    background-color: var(--clr-main-darker)
 }
 
 /* Clear floats (clearfix hack) */
