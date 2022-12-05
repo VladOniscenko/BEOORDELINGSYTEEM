@@ -62,6 +62,7 @@
     <title>Studentinformatie - het GLRtje</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 <header>
@@ -218,6 +219,12 @@
         <!-- id = null -->
 
         <!-- IDLeerling -->
+        <button onclick='hideToevoegContainer(0)' class='closebtn'>
+            <span class='material-symbols-outlined'>
+                close
+            </span>
+        </button>
+    <h3>Beoordelingen toevoegen</h3>
         <input type="hidden" value="<?php echo $id ?>" name="IDLeerling" id="IDLeerling">
 
         <!-- sleutelwoord // Onderwerp -->
@@ -248,7 +255,7 @@
         <!-- DATUM -->
         <input type="hidden" name="datum" value="<?php echo date('Y-m-d'); ?>">
 
-        <input type="submit" value="Verzenden">
+        <input type="submit" value="Verzenden" class="submit button">
     </form>
 </body>
 </html>
