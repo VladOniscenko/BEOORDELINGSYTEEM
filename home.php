@@ -41,7 +41,7 @@
     <?php 
     
         if($klas == NULL || $klas == 0){
-            echo "<h1>U heeft nog geen klas!</h1>";
+            echo "<h1>Er is nog geen klas aan u toegewezen!</h1>";
             echo "<h1>Neem contact op met uw ICT-afdeling voor meer informatie.</h1>";
         }else{
 
@@ -80,7 +80,7 @@
             }
             else
             {
-                echo "<p>U heeft nog geen leerlingen toegevoegd aan uw klas!</p>";
+                echo "<h1>U heeft nog geen leerlingen toegevoegd aan uw klas!</h1>";
             }
         ?>
         <button class="buttonRound" href="./studentToevoeg.php" id="studentToevoegKnop"  onclick="hideToevoegContainer(0)">
