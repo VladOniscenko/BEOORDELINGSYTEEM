@@ -22,6 +22,11 @@ body {
     font-family: arial;
 }
 
+.center div{
+    display: flex;
+    flex-direction: column; 
+}
+
 select{
   border: none;
   padding: 10px;
@@ -361,11 +366,20 @@ h1{
     margin-top: 4%;
 }
 
+#contentFormPasAan{
+    margin: 2%;
+}
+
+#contentFormPasAan > div {
+  display: flex;
+  flex-direction: column;
+}
+
 .twoButtonContainer.aanpas{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 10px 5%;
+    /*! position: absolute; */
+    /*! bottom: 0; */
+    /*! left: 0; */
+    /*! margin: 10px 5%; */
 }
 
 @media only screen and (min-width:808px) {
