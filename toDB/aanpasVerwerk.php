@@ -31,14 +31,15 @@
     <?php
         if($result){
             echo "
-                <a href='../studentInformatie.php?id=$leerlingnummer'>terug</a>
-                <div>Aanpassing is verwerkt!</div>
+                
+                <h1>Aanpassing is verwerkt!</h1>
+                <h1><a href='../studentInformatie.php?id=$leerlingnummer'>terug</a></h1>
             ";
         }
         else{
             echo "
-                <a href='../studentInformatie.php?id=$leerlingnummer'>terug</a>
-                <div>Aanpassing is niet verwerkt! Probeer later nogmaals!</div>
+                <h1>Aanpassing is niet verwerkt! Probeer later nogmaals!</h1>
+                <h1><a href='../studentInformatie.php?id=$leerlingnummer'>terug</a></h1>
             ";
         }
     ?>
