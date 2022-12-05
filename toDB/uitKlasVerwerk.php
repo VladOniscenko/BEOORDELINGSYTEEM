@@ -8,6 +8,9 @@
         $query = "UPDATE `tabel_leerlingen` SET `klas`= 0 WHERE `leerlingnummer` = $id";
         $result = mysqli_query($mysqli,$query);
 
+        $query = "UPDATE `tabel_beoordelingen` SET `klas`= 0 WHERE `ID_leerling` = $id";
+        $result = mysqli_query($mysqli,$query);
+
         if($result){
             header("location:../home.php");
         }

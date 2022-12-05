@@ -13,6 +13,9 @@
     //LET OP: het resultaat geeft aan of het wel of niet is gelukt ('true'/'false')
     $result = mysqli_query($mysqli,$query);
 
+    $query2 = "UPDATE `tabel_beoordelingen` SET `klas`= $klas WHERE `ID_leerling` = $student_ID";
+    $result2 = mysqli_query($mysqli,$query2);
+
     //Controleer of het is gelukt
     if($result){
       header("location:../home.php");
