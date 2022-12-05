@@ -51,10 +51,17 @@
     <link rel="stylesheet" href="./scripts/image-picker.scss">
 </head>
 <body>
-    <a href="./studentInformatie.php?id=<?php echo $id ?>">terug</a>
-    
-    <div><img src="./avatars/<?php echo $avatar ?>" alt=""></div>
-    <div><a href="./toDB/avatarAanpas.php?id=<?php echo $leerlingnummer?>"><button>Avatar aanpassen</button></a></div>
+    <header>
+        <img src="./media/logo.png" alt="logo">
+        <a href="./studentInformatie.php?id=<?php echo $id ?>">terug</a>     
+    </header>    
+    <div class="container">
+
+    <div>
+        <img src="./avatars/<?php echo $avatar ?>" alt="">
+        <a href="./toDB/avatarAanpas.php?id=<?php echo $leerlingnummer?>"><button>Avatar aanpassen</button></a>
+        
+    </div>
     
     <form action="./toDB/aanpasVerwerk.php" method="post">
         
@@ -92,10 +99,14 @@
             </div>
                 
         </div>
-        
-        <input type="submit" value="verzenden">
+        <div class="twoButtonContainer aanpas">
+            <input class="button" type="submit" value="verzenden">
+            <button class="button"><a href="./toDB/uitKlas.php?id=<?php echo $id ?>">Leerling verwijderen uit de klas</a></button>             
+        </div>
+
     </form>
-    <button><a href="./toDB/uitKlas.php?id=<?php echo $id ?>">Leerling verwijderen uit de klas</a></button>
+    </div>
+
     
 </body>
 </html>
