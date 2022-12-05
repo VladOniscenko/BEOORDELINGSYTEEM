@@ -80,6 +80,11 @@
         $result = mysqli_query($mysqli,$query);
 
     echo "<div class='hiddenContainer'>";
+    echo "<button onclick='hideToevoegContainer(0)' class='closebtn'>
+            <span class='material-symbols-outlined'>
+                close
+            </span>
+        </button>";
         if(!$result){
             echo "<p>FOUT:</p>";
             echo "<p>" . $query . "</p>";
@@ -90,7 +95,7 @@
             //Als er records zijn...
         if(mysqli_num_rows($result) > 0){
             //maak een select-item
-            echo "<p>Studenten zonder klas</p>";
+            echo "<h3>Studenten zonder klas</h3>";
             echo "<form method='post' action='./toDB/toevoegVerwerk.php'>";
             echo "<select class='vrijeStudenten' name='vrijeStudent'>";
             echo "<option selected disabled>Kies een student</option>";
@@ -100,7 +105,7 @@
                 echo "<option class='student' value='".$item['leerlingnummer']."'>".$item['voornaam']." ". $item['achternaam'] . " " . date('d-m-Y', strtotime($item['geboortedatum'])). "</option>";
             }
             echo "</select><br>";
-            echo "<input type='submit' class='submit' name='submit' value='Student toevoegen'/>";
+            echo "<input type='submit' class='submit button' name='submit' value='Student toevoegen'/>";
             echo "</form>";
         }
         //Als er geen records zijn...
