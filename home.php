@@ -9,8 +9,16 @@
 
     $klas = $_SESSION['klas'];
     require './toDB/config.php';
-    $query = "SELECT * FROM tabel_leerlingen WHERE klas = '$klas'";
-    $result = mysqli_query($mysqli,$query);
+    if($klas != NULL){
+        $query = "SELECT * FROM tabel_leerlingen WHERE klas = '$klas'";
+        $result = mysqli_query($mysqli,$query);
+
+        $query2 = "SELECT * FROM tabel_groepen WHERE ID = '$klas'";
+        $result2 = mysqli_query($mysqli,$query2);
+        $item2 = mysqli_fetch_assoc($result2);
+        $klas_naam = $item2['naam_klas'];        
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -30,13 +38,21 @@
         <img src="./media/logo.png" alt="logo">
         <a href="./toDB/loguit.php?message=U bent uitgelogd!" class="material-symbols-outlined logout">logout</a>       
     </header>
+    <?php 
+    
+        if($klas == NULL || $klas == 0){
+            echo "<h1>U heeft nog geen klas!</h1>";
+            echo "<h1>Neem contact op met uw ICT-afdeling voor meer informatie.</h1>";
+        }else{
+
+    ?>
 
     <!-- MAIN -->
     <main>
         <div class="twoItemContainer">
             <div class="groupContainer">
                 <img src='http://placekitten.com/50/50' alt='placeholder'>
-                <div>Groep</div>
+                <div>Groep <?php echo $klas_naam?></div>
             </div>
             <div class="btn-group">
                 <a href="./home.php" class="selected">Klas</a>
@@ -121,5 +137,7 @@
     <footer>
 
     </footer>
+
+    <?php }?>
 </body>
 </html>
