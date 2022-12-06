@@ -9,23 +9,23 @@
         require 'config.php';
         $err = [];
 
-        if(isset($_POST['gebruikersnaam']) == false || strlen($_POST['gebruikersnaam']) < 5 || strlen($_POST['gebruikersnaam']) > 50 || empty($_POST['gebruikersnaam'])){
+        if(isset($_POST['gebruikersnaam']) == false || empty($_POST['gebruikersnaam'])){
             array_push($err, "Gebruikersnaam is niet goed verzonden!");
         }
 
-        if(isset($_POST['wachtwoord']) == false || strlen($_POST['wachtwoord']) < 5 || strlen($_POST['wachtwoord']) > 50 || empty($_POST['wachtwoord'])){
+        if(isset($_POST['wachtwoord']) == false || empty($_POST['wachtwoord'])){
             array_push($err, "Wachtwoord is niet goed verzonden!");
         }
 
-        if(isset($_POST['wachtwoordRepeat']) == false || strlen($_POST['wachtwoordRepeat']) < 5 || strlen($_POST['wachtwoordRepeat']) > 50 || empty($_POST['wachtwoordRepeat'])){
+        if(isset($_POST['wachtwoordRepeat']) == false || empty($_POST['wachtwoordRepeat'])){
             array_push($err, "WachtwoordRepeat is niet goed verzonden!");
         }
         
-        if(isset($_POST['voornaam']) == false || strlen($_POST['voornaam']) < 3 || strlen($_POST['voornaam']) > 50 || empty($_POST['voornaam'])){
+        if(isset($_POST['voornaam']) == false || empty($_POST['voornaam'])){
             array_push($err, "Voornaam is niet goed verzonden!");
         }
 
-        if(isset($_POST['achternaam']) == false || strlen($_POST['achternaam']) < 3 || strlen($_POST['achternaam']) > 50 || empty($_POST['achternaam'])){
+        if(isset($_POST['achternaam']) == false || empty($_POST['achternaam'])){
             array_push($err, "Achternaam is niet goed verzonden!");
         }
 
@@ -33,7 +33,7 @@
             array_push($err, "Geboorte datum is niet goed verzonden!");
         }
 
-        if(isset($_POST['email']) == false || strlen($_POST['email']) > 50 || empty($_POST['email'])){
+        if(isset($_POST['email']) == false || empty($_POST['email'])){
             array_push($err, "Email adres is niet goed verzonden!");
         }
 
@@ -43,8 +43,7 @@
 
         //CONTROLE OP ERRORS
         if(!empty($err)){
-            //header("location:../registratie.php?message=$err");
-            var_dump($err);
+            header("location:../registratie.php?message=$err");
         }
         //ALS ER GEEN ERRORS ZIJN CONTROLEER IK OF ER GEEN DEZELFDE USERNAME IS
         else{

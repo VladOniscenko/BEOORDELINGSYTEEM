@@ -15,6 +15,12 @@
 <body class="loginPage">
     
     <form action="./toDB/registrVerwerk.php" method="post" class="loginContainer">
+        <?php
+            if (isset($_GET['message'])) {
+                $res = $_GET['message'];
+                echo "<div>$res</div>";
+            }
+        ?>
         <fieldset>
             <legend><h1>Registreren</h1></legend>
 

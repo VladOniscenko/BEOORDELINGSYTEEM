@@ -22,11 +22,11 @@
             </legend>
 
             <?php
-        if (isset($_GET['message'])) {
-            $res = $_GET['message'];
-            echo "<div>$res</div>";
-        }
-        ?>
+                if (isset($_GET['message'])) {
+                    $res = $_GET['message'];
+                    echo "<div>$res</div>";
+                }
+            ?>
             <label for="username">Username</label>
             <input type="text" name="username" required max="50" placeholder="Username">
             <label for="password">Password</label>
