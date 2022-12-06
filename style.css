@@ -26,6 +26,16 @@ body {
     display: flex;
     flex-direction: column; 
 }
+.groupIcon{
+    background-color: var(--clr-main);
+    aspect-ratio: 1/1;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: gainsboro 0px 0px 9px;
+    color: white;
+}
 
 select{
   border: none;
@@ -319,7 +329,7 @@ h1{
 
 .btn-group a {
   background-color: var(--clr-main); /* Green background */
-  border: 1px solid var(--clr-dark-shade); /* Green border */
+  border: 1px solid var(--clr-main-darker); /* Green border */
   color: white; /* White text */
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
@@ -327,6 +337,7 @@ h1{
   min-width:100px;
   text-align: center;
   transition: background-color 0.2s;
+
 }
 
 .btn-group a:first-child{
@@ -364,6 +375,15 @@ h1{
 
 #mijnCanvas{
     margin-top: 4%;
+}
+
+#contentFormPasAan{
+    margin: 2%;
+}
+
+#contentFormPasAan > div {
+  display: flex;
+  flex-direction: column;
 }
 
 .twoButtonContainer.aanpas{
