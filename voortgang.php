@@ -89,13 +89,14 @@ if (mysqli_num_rows($result) > 0)
     <title>Voortgang</title>
     <link rel="stylesheet" href="./style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script type="text/javascript" defer src="./scripts/chart.js"></script>
 </head>
 <body>
         <!-- HEADER -->
         <header>
         <img src="./media/logo.png" alt="logo">
-        <a href="./toDB/loguit.php?message=U bent uitgelogd!">Uitlogen</a>       
+        <a href="./toDB/loguit.php?message=U bent uitgelogd!" class="material-symbols-outlined logout">logout</a>       
     </header>
     <div class="twoItemContainer">
             <div class="groupContainer">
