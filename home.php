@@ -51,7 +51,7 @@
     <main>
         <div class="twoItemContainer">
             <div class="groupContainer">
-            <span class="material-symbols-outlined" class="groupIcon">
+            <span class="material-symbols-outlined groupIcon">
                 groups
             </span>
                 <div>Groep <?php echo $klas_naam?></div>
