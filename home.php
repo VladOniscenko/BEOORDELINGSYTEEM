@@ -74,7 +74,7 @@
                     echo "</div>";
                     echo "<div class='twoButtonContainer'>";
                     echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Info</a>";
-                    echo "<a href='studentAanpas.php?id=".$item['leerlingnummer']."'>Pas aan</a>";
+                    echo "<a href='studentAanpas.php?id=".$item['leerlingnummer']."'>Aanpassen</a>";
                     echo "</div>";
                     echo "</div>";
                 }
