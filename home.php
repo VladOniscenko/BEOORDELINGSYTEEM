@@ -51,7 +51,9 @@
     <main>
         <div class="twoItemContainer">
             <div class="groupContainer">
-                <img src='http://placekitten.com/50/50' alt='placeholder'>
+            <span class="material-symbols-outlined groupIcon">
+                groups
+            </span>
                 <div>Groep <?php echo $klas_naam?></div>
             </div>
             <div class="btn-group">
@@ -72,7 +74,7 @@
                     echo "</div>";
                     echo "<div class='twoButtonContainer'>";
                     echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Info</a>";
-                    echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Pas aan</a>";
+                    echo "<a href='studentAanpas.php?id=".$item['leerlingnummer']."'>Aanpassen</a>";
                     echo "</div>";
                     echo "</div>";
                 }
