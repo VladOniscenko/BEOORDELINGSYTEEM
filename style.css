@@ -366,15 +366,6 @@ h1{
     margin-top: 4%;
 }
 
-#contentFormPasAan{
-    margin: 2%;
-}
-
-#contentFormPasAan > div {
-  display: flex;
-  flex-direction: column;
-}
-
 .twoButtonContainer.aanpas{
     /*! position: absolute; */
     /*! bottom: 0; */
