@@ -337,6 +337,7 @@ h1{
   min-width:100px;
   text-align: center;
   transition: background-color 0.2s;
+  text-decoration: none;
 
 }
 
