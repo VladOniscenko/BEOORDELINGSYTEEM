@@ -4,7 +4,7 @@
   require_once 'session.inc.php';
   require 'config.php';
 
-  if(isset($_POST['submit'])){
+  if(isset($_POST['vrijeStudent'])){
     $klas= $_SESSION['klas'];
     $student_ID = $_POST['vrijeStudent'];
 
@@ -12,6 +12,9 @@
     //Voer de query uit en vang het 'resultaat' op
     //LET OP: het resultaat geeft aan of het wel of niet is gelukt ('true'/'false')
     $result = mysqli_query($mysqli,$query);
+
+    $query2 = "UPDATE `tabel_beoordelingen` SET `klas`= $klas WHERE `ID_leerling` = $student_ID";
+    $result2 = mysqli_query($mysqli,$query2);
 
     //Controleer of het is gelukt
     if($result){
@@ -22,5 +25,7 @@
         echo $query . "<br/>"; // de query tonen
         echo mysqli_error($mysqli); //de foutmelding tonen
     }
+  }else{
+    header("location:../home.php?message=Geen student gevonden!");
   }
 ?>

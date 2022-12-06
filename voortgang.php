@@ -6,9 +6,18 @@
     //error reporting
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
+
+    $klas = $_SESSION['klas'];
+    require './toDB/config.php';
+    if($klas != NULL){
+        $query2 = "SELECT * FROM tabel_groepen WHERE ID = '$klas'";
+        $result2 = mysqli_query($mysqli,$query2);
+        $item2 = mysqli_fetch_assoc($result2);
+        $klas_naam = $item2['naam_klas'];        
+    }
 ?>
 <!-- //code -->
-<?php require './toDB/config.php';
+<?php
 $klas = $_SESSION['klas'];
 $query = "SELECT * FROM tabel_beoordelingen WHERE klas = '$klas'";
 $result = mysqli_query($mysqli, $query);
@@ -91,7 +100,7 @@ if (mysqli_num_rows($result) > 0)
     <div class="twoItemContainer">
             <div class="groupContainer">
                 <img src='http://placekitten.com/50/50' alt='placeholder'>
-                <div>Groep</div>
+                <div>Groep <?php echo $klas_naam?></div>
             </div>
             <div class="btn-group">
                 <a href="./home.php">Klas</a>

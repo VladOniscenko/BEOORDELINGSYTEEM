@@ -101,7 +101,7 @@
         </div>
         <div class="twoButtonContainer aanpas">
             <input class="button" type="submit" value="verzenden">
-            <button class="button"><a href="./toDB/uitKlas.php?id=<?php echo $id ?>">Leerling verwijderen uit de klas</a></button>             
+            <a class="button" href="./toDB/uitKlas.php?id=<?php echo $id ?>">Leerling verwijderen uit de klas</a>          
         </div>
 
     </form>
