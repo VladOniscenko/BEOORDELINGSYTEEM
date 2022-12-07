@@ -100,7 +100,9 @@ if (mysqli_num_rows($result) > 0)
     </header>
     <div class="twoItemContainer">
             <div class="groupContainer">
-                <img src='http://placekitten.com/50/50' alt='placeholder'>
+            <span class="material-symbols-outlined groupIcon">
+                groups
+            </span>
                 <div>Groep <?php echo $klas_naam?></div>
             </div>
             <div class="btn-group">

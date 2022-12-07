@@ -68,9 +68,9 @@ table {
   border: 0;
   box-shadow: gray 0px 0px 1px
 }
-div > h3:not(:first-child){
+/* div > h3:not(:first-child){
     margin-top: 10%;
-}
+} */
 td, th {
   border: none;
   text-align: left;
