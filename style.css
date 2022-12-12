@@ -42,7 +42,6 @@ body {
 select{
   border: none;
   padding: 10px;
-  background-color: white;
 }
 
 .material-symbols-outlined.logout{
