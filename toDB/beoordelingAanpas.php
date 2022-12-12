@@ -41,20 +41,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Bewerken</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./scripts/image-picker.scss">
 </head>
-<body>
-    <a href="../studentInformatie.php?id=<?php echo $studentID ?>">terug</a>
-    
-    <form action="./beoordelingAanpasVerwerk.php" method="post">
+<body class="loginPage">
+    <form action="./beoordelingAanpasVerwerk.php" method="post" class="loginContainer">
         
-        <div id="contentFormPasAan">
+        <fieldset>
+            <legend>
+                <h1>Pas beoordelingsysteem aan</h1>
+            </legend>
             <input type="hidden" value="<?php echo $id; ?>" name="id">
             <input type="hidden" value="<?php echo date('Y-m-d'); ?>" name="datum">
             <input type="hidden" value="<?php echo $studentID; ?>" name="leerlingnummer">
-            <div>
-            <div >Soort beoordeling:</div>
+            <label for="sleutelwoord_beoordeling">Soort beoordeling:</label>
             <select name="sleutelwoord_beoordeling" id="sleutelwoord" required>
                 <optgroup label="Positieve beoordelingen">
                     <option value="Huiswerk gemaakt" <?=$sleutelwoord_beoordeling == 'Huiswerk gemaakt' ? ' selected="selected"' : ''?>>Huiswerk gemaakt</option>
@@ -72,18 +72,10 @@
                     <option value="Iets anders negatief" <?=$sleutelwoord_beoordeling == 'Iets anders negatief' ? ' selected="selected"' : ''?>>Iets anders negatief</option>
                 </optgroup>
             </select>
-        </div>
-
-            <div>
-                <div >Beschrijving:</div>
-                <div>
-                    <textarea name="beschrijving_beoordeling" cols="30" rows="10" maxlength="300" required><?php echo $beschrijving_beoordeling ?></textarea>
-                </div>
-            </div>
-
-        </div>
-        
-        <input type="submit" value="verzenden">
+            <label for="beschrijving_beoordeling">Beschrijving:</label>
+            <textarea name="beschrijving_beoordeling" cols="30" rows="10" maxlength="300" required><?php echo $beschrijving_beoordeling ?></textarea>
+            <input type="submit" value="verzenden" class="button">
+        </fieldset>
     </form>
     
 </body>

@@ -161,7 +161,7 @@
                         <td>$beschBe</td>
                         <td>$sleutelBe</td>
                         <td>$datumBe</td>
-                        <td><a href='./toDB/beoordelingAanpas.php?id=$IDBe&studentID=$id'>Aanpassen</a></td>
+                        <td><a class='button' href='./toDB/beoordelingAanpas.php?id=$IDBe&studentID=$id'>Aanpassen</a></td>
                         <td><button type='button' class='button' onclick='confirmOnClick(&quot;toDB/verwijderBeoordeling.php?id=$IDBe&studentID=$id&sleutel=$sleutelBe&quot;)'>Verwijderen</button></td>
                     </tr>
                 ";  
@@ -181,7 +181,7 @@
     <?php
         echo "
             <h2>Negatieve beoordelingen</h2>
-            <table border='1px'>
+            <table border='1px' class='tableRed'>
                 <tr>
                     <th>Beschrijving beoordeling</th>
                     <th>Type beoordeling</th>
@@ -207,8 +207,8 @@
                         <td>$NbeschBe</td>
                         <td>$NsleutelBe</td>
                         <td>$NdatumBe</td>
-                        <td><a href='./toDB/beoordelingAanpas.php?id=$NIDBe&studentID=$id'>Aanpassen</a></td>
-                        <td><a href='./toDB/verwijderVraag.php?id=$NIDBe&studentID=$id'>Verwijderen</a></td>
+                        <td><a class='button' href='./toDB/beoordelingAanpas.php?id=$NIDBe&studentID=$id'>Aanpassen</a></td>
+                        <td><a class='button' href='./toDB/verwijderVraag.php?id=$NIDBe&studentID=$id'>Verwijderen</a></td>
                     </tr>
                 ";  
             }

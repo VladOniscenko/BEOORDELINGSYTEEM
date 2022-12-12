@@ -42,7 +42,7 @@ body {
 select{
   border: none;
   padding: 10px;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .material-symbols-outlined.logout{
@@ -196,10 +196,12 @@ a{
     margin-bottom: 5px;
 }
 
-.loginContainer > fieldset > input{
+.loginContainer > fieldset > input, select, textarea{
     margin-bottom: 40px;
     width: 70%;
-    height: 20px;
+    min-height: 20px;
+    border-radius: 10px;
+    border: none;
 }
 
 /*HOME*/
@@ -226,6 +228,14 @@ header > img{
 .groupContainer {
     display: flex;
     background-image: red;
+}
+
+.tableRed > tbody > tr > th{
+    background-color: red;
+}
+
+.tableRed > tbody > tr > td > .button{
+    background-color: red;
 }
 
 .groupContainer > div{
@@ -256,6 +266,7 @@ header > img{
 .naam{
     margin-top: 4px;
     margin-bottom: 2px;
+    padding-bottom: 10px;
 }
 
 .achternaam{

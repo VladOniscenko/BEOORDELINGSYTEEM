@@ -69,8 +69,7 @@
                     echo "<div class='card'>";
                     echo "<img class='avatar' src='./avatars/" . $item['avatar_leerling'] . "' width='100%'>";
                     echo "<div>";
-                    echo "<div class='naam'>" . $item['voornaam']." "."</div>";
-                    echo "<div class='achternaam'>". $item['achternaam']."</div>";
+                    echo "<div class='naam'>" . $item['voornaam'].' '. $item['achternaam']." "."</div>";
                     echo "</div>";
                     echo "<div class='twoButtonContainer'>";
                     echo "<a href='studentInformatie.php?id=".$item['leerlingnummer']."'>Info</a>";
