@@ -14,7 +14,7 @@
         $query = "SELECT * FROM `tabel_beoordelingen` WHERE ID = '$id'";
         $result = mysqli_query($mysqli, $query);
         if(!$result){
-            echo "<p>FOUT!</p>";
+            header("location:../studentInformatie.php?id=$studentID&message=Er is een fout opgetreden bij het verwerken van uw verzoek.</br> Probeer het later nogmaals!");
             echo "<p> $query </p>";
             echo "<p>" . mysqli_error($mysqli) . "</p>";
             exit;

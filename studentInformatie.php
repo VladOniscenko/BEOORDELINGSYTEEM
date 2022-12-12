@@ -70,7 +70,12 @@
         <a href="./home.php">Terug</a>   
     </header>
 
-    
+    <?php
+                if (isset($_GET['message'])) {
+                    $res = $_GET['message'];
+                    echo "<h3 id='message'>$res</h3>";
+                }
+            ?>
     <div class='container'>
 
     <!-- STUDENT INFO -->
@@ -131,10 +136,8 @@
     <!-- TABELLEN POSITIEVE BE -->
     <?php
         echo "<div>";
-        if(mysqli_num_rows($result3) > 0){
-            //TONEN VAN POSITIEVE BEOORDELINGEN IN DE TABEL
             echo "
-                <h3>Positieve Beoordelingen</h3>
+                <h2>Positieve beoordelingen</h2>
                 <table border='1px'>
                     <tr>
                         <th>Beschrijving beoordeling</th>
@@ -144,6 +147,9 @@
                         <th>Beoordeling verwijderen</th>
                     </tr>
             ";
+        if(mysqli_num_rows($result3) > 0){
+            //TONEN VAN POSITIEVE BEOORDELINGEN IN DE TABEL
+            
             while($item = mysqli_fetch_assoc($result3)){
                 $IDBe = $item['ID'];
                 $beschBe = $item['beschrijving_beoordeling'];
@@ -160,32 +166,35 @@
                     </tr>
                 ";  
             }
-            echo "</table>";
+            
+        }else{
+            echo "
+                <tr>
+                    <td colspan='5'>Er zijn geen beoordelingen gevonden.</td>
+                </tr>
+                ";  
         }
-        //Als er geen positieve beoordeling op staat, toon deze:
-        else{
-            echo "<div>Er is geen positieve beoordeling gevonden in het systeem. </div>";
-        }
-
+        echo "</table>";
     ?>
 
     <!-- TABELLEN NEGATIVE BE -->
     <?php
+        echo "
+            <h2>Negatieve beoordelingen</h2>
+            <table border='1px'>
+                <tr>
+                    <th>Beschrijving beoordeling</th>
+                    <th>Type beoordeling</th>
+                    <th>Datum beoordeling</th>
+                    <th>Beoordeling aanpassen</th>
+                    <th>Beoordeling verwijderen</th>
+                </tr>
+            ";
         if(mysqli_num_rows($result4) > 0){
             
 
             //TONEN VAN POSITIEVE BEOORDELINGEN IN DE TABEL
-            echo "
-                <h3>Negatieve Beoordelingen</h3>
-                <table border='1px'>
-                    <tr>
-                        <th>Beschrijving beoordeling</th>
-                        <th>Type beoordeling</th>
-                        <th>Datum beoordeling</th>
-                        <th>Beoordeling aanpassen</th>
-                        <th>Beoordeling verwijderen</th>
-                    </tr>
-            ";
+            
 
             while($item = mysqli_fetch_assoc($result4)){
                 $NIDBe = $item['ID'];
@@ -203,12 +212,17 @@
                     </tr>
                 ";  
             }
-            echo "</table>";
+            
+        }else{
+            echo "
+                <tr>
+                    <td colspan='5'>Er zijn geen beoordelingen gevonden.</td>
+                </tr>
+                ";  
         }
+        echo "</table>";
         //Als er geen negatieve beoordeling op staat, toon deze:
-        else{
-            echo "<div>Er is geen negatieve beoordeling gevonden in het systeem. </div>";
-        }
+        
         echo "</div>";
     echo "                            <div class='twoButtonContainer gc-span2'>
     <a href='./studentAanpas.php?id=$leerlingnummer' class='button'>Gegevens aanpassen</a>

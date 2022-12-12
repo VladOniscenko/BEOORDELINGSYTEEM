@@ -35,7 +35,7 @@
             header("location:../studentInformatie.php?id=$IDLeerling");
         }
         else{
-            echo "FOUT bij toevoegen<br/>";
+            header("location:../studentInformatie.php?id=$IDLeerling&message=Er is een fout opgetreden bij het verwerken van uw verzoek.</br> Probeer het later nogmaals!");
             echo $query . "<br/>"; // de query tonen
             echo mysqli_error($mysqli); //de foutmelding tonen
         }
