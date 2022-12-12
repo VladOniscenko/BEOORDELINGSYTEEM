@@ -15,6 +15,12 @@
 
         $query = "UPDATE `tabel_beoordelingen` SET `beschrijving_beoordeling`='$beschrijving_beoordeling',`sleutelwoord_beoordeling`='$sleutelwoord_beoordeling',`datum_beoordeling`='$datum' WHERE `ID` = $id";
         $result = mysqli_query($mysqli,$query);
+
+        if($result){
+            header("location:../studentInformatie.php?id=$leerlingnummer");
+        }else{
+            header("location:../studentInformatie.php?id=$leerlingnummer&message=Er is een fout opgetreden bij het verwerken van uw verzoek.</br> Probeer het later nogmaals!");
+        }
     }
 ?>
 
@@ -28,19 +34,6 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <?php
-        if($result){
-            echo "
-                <a href='../studentInformatie.php?id=$leerlingnummer'>terug</a>
-                <div>Aanpassing is verwerkt!</div>
-            ";
-        }
-        else{
-            echo "
-                <a href='../studentInformatie.php?id=$leerlingnummer'>terug</a>
-                <div>Aanpassing is niet verwerkt! Probeer later nogmaals!</div>
-            ";
-        }
-    ?>
+
 </body>
 </html>

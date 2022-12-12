@@ -70,7 +70,12 @@
         <a href="./home.php">Terug</a>   
     </header>
 
-    
+    <?php
+                if (isset($_GET['message'])) {
+                    $res = $_GET['message'];
+                    echo "<h3 id='message'>$res</h3>";
+                }
+            ?>
     <div class='container'>
 
     <!-- STUDENT INFO -->
