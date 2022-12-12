@@ -11,3 +11,9 @@ function hideToevoegContainer(containerId) {
         console.log("display set to none");
       }
   }
+
+  function confirmOnClick(link){
+    if (confirm("Weet je het zeker?") == true){
+      window.location.href = link;
+    }
+  }

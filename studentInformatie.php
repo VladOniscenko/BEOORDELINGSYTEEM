@@ -156,7 +156,7 @@
                         <td>$sleutelBe</td>
                         <td>$datumBe</td>
                         <td><a href='./toDB/beoordelingAanpas.php?id=$IDBe&studentID=$id'>Aanpassen</a></td>
-                        <td><a href='./toDB/verwijderVraag.php?id=$IDBe&studentID=$id'>Verwijderen</a></td>
+                        <td><button type='button' class='button' onclick='confirmOnClick(&quot;toDB/verwijderBeoordeling.php?id=$IDBe&studentID=$id&sleutel=$sleutelBe&quot;)'>Verwijderen</button></td>
                     </tr>
                 ";  
             }

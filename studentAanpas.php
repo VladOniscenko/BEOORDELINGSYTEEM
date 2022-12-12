@@ -49,6 +49,7 @@
     <title>Student Bewerken</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./scripts/image-picker.scss">
+    <script src="script.js" async></script>
 </head>
 <body>
     <header>
@@ -101,7 +102,7 @@
         </div>
         <div class="twoButtonContainer aanpas">
             <input class="button" type="submit" value="verzenden">
-            <a class="button" href="./toDB/uitKlas.php?id=<?php echo $id ?>">Leerling verwijderen uit de klas</a>          
+            <button class="button" type="button" onclick="confirmOnClick('./toDB/uitKlasVerwerk.php?id=<?php echo $id ?>')">Leerling verwijderen uit de klas</button>          
         </div>
 
     </form>
