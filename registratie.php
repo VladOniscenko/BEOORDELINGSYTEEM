@@ -28,7 +28,7 @@
             <input type="text" name="gebruikersnaam" required min="5" max="50" placeholder="Gebruikersnaam">
             
             <label for="email">Email</label>
-            <input type="email" name="email" required max="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="E-mail">
+            <input type="email" name="email" required max="50" placeholder="E-mail">
             
             <label for="wachtwoord">Wachtwoord</label>
             <input type="password" name="wachtwoord" required  min="5" max="50" placeholder="Wachtwoord">
