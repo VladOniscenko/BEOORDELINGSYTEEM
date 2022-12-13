@@ -208,7 +208,7 @@
                         <td>$NsleutelBe</td>
                         <td>$NdatumBe</td>
                         <td><a class='button' href='./toDB/beoordelingAanpas.php?id=$NIDBe&studentID=$id'>Aanpassen</a></td>
-                        <td><a class='button' href='./toDB/verwijderVraag.php?id=$NIDBe&studentID=$id'>Verwijderen</a></td>
+                        <td><button type='button' class='button' onclick='confirmOnClick(&quot;toDB/verwijderBeoordeling.php?id=$NIDBe&studentID=$id&sleutel=$NsleutelBe&quot;)'>Verwijderen</button></td>
                     </tr>
                 ";  
             }
