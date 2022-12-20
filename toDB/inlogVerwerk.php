@@ -7,7 +7,7 @@
         
         require 'config.php';
 
-        $username = $_POST['username'];
+        $username = strtolower($_POST['username']);
         $password = $_POST['password'];
 
         $password = SHA1($password);

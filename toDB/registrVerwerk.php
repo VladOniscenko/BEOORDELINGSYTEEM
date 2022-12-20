@@ -58,13 +58,13 @@
             }
             else{
 
-                $userN = $_POST['gebruikersnaam'];
+                $userN = strtolower($_POST['gebruikersnaam']);
                 $getPass = $_POST['wachtwoord'];
                 $passW = SHA1($getPass);
-                $voorN = $_POST['voornaam'];
-                $achterN = $_POST['achternaam'];
+                $voorN = strtolower($_POST['voornaam']);
+                $achterN = strtolower($_POST['achternaam']);
                 $geboorteD = $_POST['geboorte'];
-                $eMail = $_POST['email'];
+                $eMail = strtolower($_POST['email']);
 
 
                 $insertQuery = "INSERT INTO `inlog_docent`(`ID`, `gebruikersnaam`, `wachtwoord`, `voornaam_docent`, `achternaam_docent`, `geboortedatum_docent`, `email_docent`) VALUES (NULL,'$userN','$passW','$voorN','$achterN','$geboorteD','$eMail')";
