@@ -1,0 +1,443 @@
+:root{
+    /* Colors */
+    --clr-light-shade: #F6F3F5;
+    --clr-light-shade2: #eae8e9;
+    --clr-light-accent: #84AAA4;
+    --clr-main: #8FE507;
+    --clr-main-darker: #3e8e41;
+    --clr-dark-accent: #956E38;
+    --clr-dark-shade: #2C2D35;
+
+    font-family: arial, sans-serif;
+}
+
+html,
+body{
+    height: 100%;
+}
+textarea{
+    resize: none;
+}
+body {
+    height: 100%;
+    margin: 0;
+    font-family: arial;
+}
+
+.center div{
+    display: flex;
+    flex-direction: column; 
+}
+.groupIcon{
+    background-color: var(--clr-main);
+    aspect-ratio: 1/1;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: gainsboro 0px 0px 10px;
+    color: white;
+}
+
+select{
+  border: none;
+  padding: 10px;
+}
+
+.material-symbols-outlined.logout{
+    color: var(--clr-dark-shade);
+    text-decoration: none;
+}
+
+.material-symbols-outlined.logout:hover{
+    color: var(--clr-main);
+    transition: color 2s
+}
+
+body{
+    background-color: var(--clr-light-shade);
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0;
+  box-shadow: gray 0px 0px 1px
+}
+/* div > h3:not(:first-child){
+    margin-top: 10%;
+} */
+td, th {
+  border: none;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:first-child{
+    background-color: var(--clr-main);
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+a{
+    color: var(--clr-main-darker);
+}
+
+.mb90px{
+    margin-bottom: 170px !important;
+}
+
+.gc-span2{
+    grid-column: span 2;
+}
+
+.button {
+    background-color: var(--clr-main);
+    border: none;
+    color: var(--clr-light-shade);
+    border-radius: 5px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: large;
+    transition: background-color 0.5s;
+  }
+
+.button:hover{
+    background-color: var(--clr-main-darker);
+}
+
+  .buttonRound{
+    width: 60px;
+    height: 60px;
+    background-color: var(--clr-main);
+    color: var(--clr-light-shade);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    transition: background-color 0.2s;
+
+  }
+
+.buttonRound:hover{
+    background-color: var(--clr-main-darker)
+}
+
+  .twoButtonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: auto;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .twoButtonContainer > a{
+    margin: auto 0;
+  }
+
+  input[type=text],input[type=password],input[type=date],input[type=email],input[type=number] {
+    border-radius: 10px;
+    border: 0px;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  /* LOGIN PAGE */
+
+.loginPage{
+    display: flex;
+    background-color: var(--clr-dark-shade);
+}
+
+.loginContainer{
+    background-color: var(--clr-light-shade);
+    margin: auto;
+    width: 100%;
+    max-width: 650px;
+    border-radius: 10px;
+}
+.loginContainer > fieldset{
+    display: flex;
+    margin: 0 auto 0 auto;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+    font-size: large;
+}
+
+.loginContainer > fieldset > legend {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.loginContainer > fieldset > label{
+    margin-right:auto ;
+    margin-left: 15%;
+    margin-bottom: 5px;
+}
+
+.loginContainer > fieldset > input, select, textarea{
+    margin-bottom: 40px;
+    width: 70%;
+    min-height: 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+/*HOME*/
+
+header{
+    background-color: white;
+    color: var(--clr-dark-shade);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: gray 0px 0px 4px;
+}
+
+header > img{
+    max-height: 70px;
+}
+
+.twoItemContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 21px 30px 0px 30px;
+}
+.groupContainer {
+    display: flex;
+    background-image: red;
+}
+
+.tableRed > tbody > tr > th{
+    background-color: red;
+}
+
+.tableRed > tbody > tr > td > .button{
+    background-color: red;
+}
+
+.groupContainer > div{
+    margin: auto 0 auto 10px;
+}
+
+.studentContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    margin: 3%;
+    grid-gap: 4rem;
+}
+
+.card{
+    min-width: 230px;
+    width: 230px;
+    display: grid;
+    margin: auto;
+    text-align: center;
+    /*! border: 1px solid black; */
+    background-color: whitesmoke;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: gray 0px 0px 4px;
+}
+
+
+.naam{
+    margin-top: 4px;
+    margin-bottom: 2px;
+    padding-bottom: 10px;
+}
+
+.achternaam{
+    margin-bottom: 18px;
+}
+
+.card > img{
+    margin-bottom: 10px
+}
+
+.card a {
+    color: gray;
+}
+
+.hiddenContainer{
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 0px;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.hiddenContainer h3{
+    padding: 20px 10px 0px;
+}
+
+.hiddenContainer select{
+    margin-bottom: 20px;
+}
+
+
+.closebtn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    color: var(--clr-dark-shade);
+    transition: color 0.1s;
+    margin-bottom: 10px;
+}
+
+.closebtn:hover{
+    color: var(--clr-main)
+}
+
+.vrijeStudenten{
+    margin-bottom: 6px
+}
+.submit.button{
+    padding: 6px;
+}
+
+
+
+h1{
+    text-align: center;
+}
+
+.toevoegen{
+    margin-left: 4%;
+}
+
+.btn-group{
+    overflow: hidden;
+}
+
+.btn-group a {
+  background-color: var(--clr-main); /* Green background */
+  border: 1px solid var(--clr-main-darker); /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  min-width:100px;
+  text-align: center;
+  transition: background-color 0.2s;
+  text-decoration: none;
+
+}
+
+.btn-group a:first-child{
+    border-radius: 10px 0px 0px 10px;
+}
+
+.btn-group a:last-child{
+    border-radius: 0px 10px 10px 0px;
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group a:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group a:hover {
+  background-color: var(--clr-main-darker);
+}
+
+.student{
+    
+}
+
+.student img{
+    border-radius: 10px;
+    margin-bottom:20px
+}
+
+#mijnCanvas{
+    margin-top: 4%;
+}
+
+#contentFormPasAan{
+    margin: 2%;
+}
+
+#contentFormPasAan > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.twoButtonContainer.aanpas{
+    /*! position: absolute; */
+    /*! bottom: 0; */
+    /*! left: 0; */
+    /*! margin: 10px 5%; */
+}
+
+@media only screen and (min-width:808px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        height: calc(100% - 110px);
+    }
+    
+    .container > div{
+        padding: 20px
+    }
+    
+    .container > div > table{
+        width: 100%;
+        /*! margin-bottom: 20%; */
+    }
+}
+
+.containeravatars{
+    margin: 5px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+}
+  
+.containeravatars > a > img{
+    width:100%;
+    height: 100%;
+}
+
+#message{
+    padding-top: 1rem;
+    color: red;
+    text-align: center;
+    margin: auto;
+}
